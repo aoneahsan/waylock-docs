@@ -1,0 +1,11 @@
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+node_modules/
+build/
+.docusaurus/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo

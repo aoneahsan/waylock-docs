@@ -1,0 +1,15 @@
+# Waylock guides
+
+Waylock is an Android route-planning app in development. These public guides describe planned controls and the current release status. Do not assume a control is available in a released app until the guide says it has been verified there.
+
+## Start here
+- [Guide overview](https://waylock-docs.aoneahsan.com/)
+- [Release status](https://waylock-docs.aoneahsan.com/guide/release-status)
+- [Route controls](https://waylock-docs.aoneahsan.com/guide/route-controls)
+
+## Related site
+- [Waylock](https://waylock.aoneahsan.com/)
+- [Privacy Policy](https://waylock.aoneahsan.com/privacy)
+- [Account deletion](https://waylock.aoneahsan.com/delete-account)
+
+No public Waylock API is documented here.
