@@ -23,4 +23,4 @@ The build produces `build/` with prerendered pages, `sitemap.xml`, `feed.xml`, `
 - Public links to Waylock's Privacy Policy, Terms and deletion page point to the marketing host. Verify those pages are live before publishing this site.
 - Story Gate 4 approval for exact final copy is pending. Source prepared locally before public release must not be pushed to `main` until that approval is recorded.
 
-The project owner controls Play submission, DNS and account-deletion request handling. The Pages workflow deploys only from `main` after the release gate.
+The project owner controls Play submission and DNS. Account deletion will use signed-in self-service on the website and fresh Google confirmation in-app; both require live proof before publication. The Pages workflow deploys only from `main` after the release gate.
