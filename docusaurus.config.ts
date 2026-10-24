@@ -25,6 +25,14 @@ const config: Config = {
           routeBasePath: 'guide',
           sidebarPath: './sidebars.ts',
           showLastUpdateTime: false,
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            'MANUAL-TASKS.md',
+            'story/**',
+          ],
         },
         blog: false,
         sitemap: {

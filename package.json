@@ -8,7 +8,8 @@
     "build": "docusaurus build && node scripts/postbuild.mjs",
     "serve": "docusaurus serve",
     "typecheck": "tsc --noEmit",
-    "lint": "node scripts/check-content.mjs"
+    "lint": "node scripts/check-content.mjs",
+    "publish:check": "node scripts/check-publication.mjs"
   },
   "dependenciesMeta": {
     "@swc/core": {
