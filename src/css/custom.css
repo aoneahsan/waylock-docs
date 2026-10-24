@@ -24,3 +24,6 @@ html .guide-home-main h2{font-size:clamp(32px,3.6vw,56px)}
 body:has(.guide-shell) .navbar__items--left .navbar__item,body:has(.guide-shell) .navbar__toggle{display:none}
 body:has(.guide-shell) .navbar__toggle{display:none!important}
 @media(max-width:700px){html .guide-hero h1{max-width:none;font-size:clamp(50px,15vw,72px)!important}body:has(.guide-shell) .navbar__search{display:none}}
+/* Keep the mobile search field clear of the menu and Waylock mark. The logo keeps its accessible name. */
+@media(max-width:700px){.navbar__title{display:none}}
+.waylock-topic-label{display:block;margin-bottom:.35rem;color:var(--muted);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
