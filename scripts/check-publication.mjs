@@ -13,10 +13,28 @@ if (gate.status !== 'approved' || pending.length !== 0 || !/^\d{4}-\d{2}-\d{2}$/
   throw new Error(`Docs publication held: ${pending.join(', ') || gate.status}. Record exact proof and Story Gate 4 before deployment.`);
 }
 const published = new Date(`${gate.firstFeedPublicationDate}T00:00:00Z`);
-if (Number.isNaN(published.getTime())) throw new Error('Invalid firstFeedPublicationDate');
+if (Number.isNaN(published.getTime()) || published.toISOString().slice(0, 10) !== gate.firstFeedPublicationDate || published > new Date()) {
+  throw new Error('Invalid or future firstFeedPublicationDate');
+}
+const dates = JSON.parse(readFileSync(new URL('./page-dates.json', import.meta.url), 'utf8'));
+for (const [path, key] of [
+  ['/guide/route-controls', 'routeControlsApprovedWords'],
+  ['/guide/account-and-data', 'accountDataApprovedWords'],
+]) {
+  if (gate[key] !== dates[path]?.words) throw new Error(`${path}: rendered words differ from exact Story Gate 4 approval`);
+}
 const feed = readFileSync(new URL('../build/feed.xml', import.meta.url), 'utf8');
 const feedPage = readFileSync(new URL('../build/feed.html', import.meta.url), 'utf8');
 const displayDate = new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(published);
 if (!feed.includes(`<pubDate>${published.toUTCString()}</pubDate>`) || !feedPage.includes(displayDate)) {
   throw new Error('Feed date differs from approved first publication date');
+}
+for (const path of ['/privacy', '/terms', '/delete-account']) {
+  const url = `https://waylock.aoneahsan.com${path}`;
+  const response = await fetch(url, {signal: AbortSignal.timeout(10000)});
+  const html = await response.text();
+  if (!response.ok || new URL(response.url).origin !== 'https://waylock.aoneahsan.com' ||
+      /<meta[^>]+(?:noindex|nofollow)|REVIEW CANDIDATE|DO NOT PUBLISH/i.test(html) || !html.includes('<main')) {
+    throw new Error(`${url}: live legal page is unavailable or still a review page`);
+  }
 }
