@@ -4,6 +4,7 @@ const gate = JSON.parse(readFileSync(new URL('./publication.json', import.meta.u
 const required = [
   'routeControlsStoryGate4',
   'accountDataStoryGate4',
+  'utilityStoryGate4',
   'signedDeviceRouteProof',
   'hostedDeletionAndStatusProof',
   'websiteLegalLinksLive',
@@ -17,6 +18,11 @@ if (Number.isNaN(published.getTime()) || published.toISOString().slice(0, 10) !=
   throw new Error('Invalid or future firstFeedPublicationDate');
 }
 const dates = JSON.parse(readFileSync(new URL('./page-dates.json', import.meta.url), 'utf8'));
+for (const path of Object.keys(dates).filter(path => path === '/sitemap' || path === '/feed' || path.startsWith('/guide/tags'))) {
+  if (gate.utilityApprovedWords?.[path] !== dates[path].words) {
+    throw new Error(`${path}: utility-page words differ from exact Story Gate 4 approval`);
+  }
+}
 for (const [path, key] of [
   ['/guide/route-controls', 'routeControlsApprovedWords'],
   ['/guide/account-and-data', 'accountDataApprovedWords'],

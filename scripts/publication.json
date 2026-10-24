@@ -2,6 +2,8 @@
   "status": "held",
   "routeControlsStoryGate4": false,
   "accountDataStoryGate4": false,
+  "utilityStoryGate4": false,
+  "utilityApprovedWords": {},
   "routeControlsApprovedWords": null,
   "accountDataApprovedWords": null,
   "signedDeviceRouteProof": false,
