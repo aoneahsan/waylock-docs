@@ -12,8 +12,21 @@
     "sourceMap": false,
     "declarationMap": false,
     "inlineSourceMap": false,
-    "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
-    "paths": {"@site/*": ["./*"]}
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic"
+    ],
+    "paths": {
+      "@site/*": [
+        "./*"
+      ]
+    }
   },
-  "include": ["docusaurus.config.ts", "sidebars.ts", "src/**/*", "plugins/**/*"]
+  "include": [
+    "docusaurus.config.ts",
+    "sidebars.ts",
+    "src/**/*",
+    "plugins/**/*"
+  ]
 }

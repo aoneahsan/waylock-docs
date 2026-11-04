@@ -5,7 +5,7 @@
   "packageManager": "yarn@4.18.1",
   "scripts": {
     "start": "docusaurus start",
-    "build": "docusaurus build && node scripts/postbuild.mjs",
+    "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build && node scripts/postbuild.mjs",
     "serve": "docusaurus serve",
     "typecheck": "tsc --noEmit",
     "lint": "node scripts/check-content.mjs",
@@ -26,16 +26,15 @@
     "@mdx-js/react": "3.1.1",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/plugin-content-docs": "3.10.2",
-    "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.2.0",
-    "typescript": "~6.0.3"
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "typescript": "~7.0.2"
   }
 }
