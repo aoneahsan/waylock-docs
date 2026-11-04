@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waylock-docs.aoneahsan.com/sitemap.xml
