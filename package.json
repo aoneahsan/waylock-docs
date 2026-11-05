@@ -9,8 +9,7 @@
     "serve": "docusaurus serve",
     "typecheck": "tsc --noEmit",
     "lint": "node scripts/check-content.mjs",
-    "publish:check": "node scripts/check-publication.mjs",
-    "deploy": "yarn build && npx -y wrangler@4 pages deploy build --project-name waylock-docs --branch main --commit-dirty=true"
+    "publish:check": "node scripts/check-publication.mjs"
   },
   "dependenciesMeta": {
     "@swc/core": {
