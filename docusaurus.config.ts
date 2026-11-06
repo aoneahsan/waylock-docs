@@ -39,7 +39,7 @@ const config: Config = {
           lastmod: 'date',
           changefreq: null,
           priority: null,
-          ignorePatterns: ['/search/**'],
+          ignorePatterns: ['/search/**', '/guide/tags/**'],
         },
         theme: {customCss: './src/css/custom.css'},
         ...(gaId ? {gtag: {trackingID: gaId, anonymizeIP: true}} : {}),

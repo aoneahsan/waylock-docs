@@ -57,7 +57,7 @@ if (process.argv.includes('--print-ledger')) {
   process.exit(0);
 }
 if (Object.keys(ledger).length !== routes.length) throw new Error('page-dates.json includes a stale or missing route');
-const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + routes.map(route => `  <url><loc>${escapeXml(host + route.path)}</loc><lastmod>${route.changed}</lastmod></url>`).join('\n') + '\n</urlset>\n';
+const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + routes.filter(route => !route.path.startsWith('/guide/tags')).map(route => `  <url><loc>${escapeXml(host + route.path)}</loc><lastmod>${route.changed}</lastmod></url>`).join('\n') + '\n</urlset>\n';
 writeFileSync(join(build, 'sitemap.xml'), xml);
 const notFoundFile = join(build, '404.html');
 if (!existsSync(notFoundFile)) throw new Error('404.html missing from built output');
