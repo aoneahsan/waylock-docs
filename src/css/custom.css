@@ -30,4 +30,4 @@ body:has(.guide-shell) .navbar__items--left .navbar__item:not(.navbar__toggle){d
 @media(max-width:700px){.navbar__title{display:none}}
 .waylock-topic-label{display:block;margin-bottom:.35rem;color:var(--muted);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 /* The active guide link sits on orange in dark mode; the dark ink keeps it readable. */
-html[data-theme='dark'] .guide-home-sidebar a[aria-current='page'],html[data-theme='dark'] .guide-home-sidebar a.is-current{color:#102b25}
+html[data-theme='dark'] .guide-home-sidebar nav a[aria-current=page]{color:#102b25!important}
