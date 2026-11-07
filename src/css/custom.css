@@ -49,3 +49,7 @@ html:not(#\#):not(#\#) .breadcrumbs__link,html:not(#\#):not(#\#) .navbar__brand{
 html:not(#\#):not(#\#) .guide-notice p+a{display:inline-flex;align-items:center}
 /* The heading permalink is invisible without hover, so on a touch screen it is only a stray target. */
 @media(hover:none){.hash-link{display:none}}
+.legal-notice-wrap{position:fixed;z-index:300;inset:auto 0 0;display:flex;justify-content:center;padding:0 1rem calc(1rem + env(safe-area-inset-bottom));pointer-events:none}
+.legal-notice{display:flex;align-items:center;gap:1rem;width:min(100%,36rem);padding:.8rem 1rem;border:1px solid var(--ifm-color-emphasis-300);border-radius:18px;background:var(--ifm-background-surface-color);color:var(--ifm-font-color-base);box-shadow:var(--ifm-global-shadow-md);font-size:.84rem;line-height:1.45;pointer-events:auto}
+.legal-notice p{margin:0}.legal-notice a{font-weight:700;text-underline-offset:2px}.legal-notice button{flex:none;min-height:44px;padding:.5rem 1rem;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-weight:700}
+@media(max-width:520px){.legal-notice{flex-direction:column;align-items:stretch;gap:.6rem}}

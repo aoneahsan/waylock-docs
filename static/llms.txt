@@ -7,9 +7,11 @@ Waylock is an Android route-planning app, available as a signed APK for Android 
 - [Release status](https://waylock-docs.aoneahsan.com/guide/release-status)
 - [Route controls](https://waylock-docs.aoneahsan.com/guide/route-controls)
 - [Account and data](https://waylock-docs.aoneahsan.com/guide/account-and-data)
+- [Moving from another app](https://waylock-docs.aoneahsan.com/guide/compare)
 
 ## Related site
 - [Waylock](https://waylock.aoneahsan.com/)
+- [Compare Waylock with other route and road trip apps](https://waylock.aoneahsan.com/compare)
 - [Privacy Policy](https://waylock.aoneahsan.com/privacy)
 - [Terms of Service](https://waylock.aoneahsan.com/terms)
 - [Account deletion](https://waylock.aoneahsan.com/delete-account)

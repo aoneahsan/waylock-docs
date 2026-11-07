@@ -27,6 +27,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           showLastUpdateTime: false,
           exclude: [
+            'PACKAGES.md',
             '**/_*.{js,jsx,ts,tsx,md,mdx}',
             '**/_*/**',
             '**/*.test.{js,jsx,ts,tsx}',
@@ -43,6 +44,7 @@ const config: Config = {
       },
     ],
   ],
+  clientModules: ['./src/client/legal-notice.ts'],
   plugins: [waylockBuildPlugin],
   themes: [
     [
