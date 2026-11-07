@@ -11,7 +11,8 @@ const pending = required.filter(key => gate[key] !== true);
 // D-082: the cautious wording ships with the APK. Device and deletion proof flip wording later; they never hold it back.
 for (const [flag, line] of [['signedDeviceRouteProof', 'Device proof is still missing.'],
   ['hostedDeletionAndStatusProof', 'has not yet passed a live deletion test']]) {
-  const claimed = (await Promise.all(['docs/release-status.md', 'docs/account-and-data.md'].map((file) => readFile(file, 'utf8')))).join(' ').includes(line);
+  const claimed = ['release-status', 'route-controls', 'account-and-data']
+    .some((page) => readFileSync(new URL(`../docs/${page}.md`, import.meta.url), 'utf8').includes(line));
   if (gate[flag] === true && claimed) throw new Error(`Proof is recorded for ${flag}, but the guides still say: ${line}`);
 }
 if (gate.status !== 'approved' || pending.length !== 0 || !/^\d{4}-\d{2}-\d{2}$/.test(gate.firstFeedPublicationDate ?? '')) {
