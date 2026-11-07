@@ -13,11 +13,11 @@
   },
   "/guide/account-and-data": {
     "updated": "2026-11-07",
-    "words": "f7c7e7e4230c4c96"
+    "words": "d6cd439e87737a22"
   },
   "/sitemap": {
     "updated": "2026-11-07",
-    "words": "885119354700a620"
+    "words": "407ab17928c9f0be"
   },
   "/feed": {
     "updated": "2026-11-07",
@@ -45,7 +45,7 @@
   },
   "/guide/tags/routes": {
     "updated": "2026-11-07",
-    "words": "fabf7a90094c9ede"
+    "words": "663190853f880160"
   },
   "/guide/tags/stops": {
     "updated": "2026-10-24",
@@ -57,6 +57,90 @@
   },
   "/guide/tags": {
     "updated": "2026-10-24",
-    "words": "5cee2877b6272281"
+    "words": "3c6de18712f6c080"
+  },
+  "/guide/compare": {
+    "updated": "2026-11-07",
+    "words": "0e6190543168f7b6"
+  },
+  "/guide/compare/furkot": {
+    "updated": "2026-11-07",
+    "words": "2300e9a166d0607f"
+  },
+  "/guide/compare/google-maps": {
+    "updated": "2026-11-07",
+    "words": "9e245ce94ca64b9e"
+  },
+  "/guide/compare/inroute": {
+    "updated": "2026-11-07",
+    "words": "20d170cc2948acb0"
+  },
+  "/guide/compare/magic-earth": {
+    "updated": "2026-11-07",
+    "words": "00b19d6bd716d633"
+  },
+  "/guide/compare/maposcope": {
+    "updated": "2026-11-07",
+    "words": "535aae272a2a8c87"
+  },
+  "/guide/compare/myrouteonline": {
+    "updated": "2026-11-07",
+    "words": "273e6b5cbaaebaa6"
+  },
+  "/guide/compare/optimoroute": {
+    "updated": "2026-11-07",
+    "words": "092ac7e84e54d9b9"
+  },
+  "/guide/compare/organic-maps": {
+    "updated": "2026-11-07",
+    "words": "c0c24a5423d0393e"
+  },
+  "/guide/compare/osmand": {
+    "updated": "2026-11-07",
+    "words": "ea4095c6432f44ce"
+  },
+  "/guide/compare/roadtrippers": {
+    "updated": "2026-11-07",
+    "words": "b797401e44ba1969"
+  },
+  "/guide/compare/roadwarrior": {
+    "updated": "2026-11-07",
+    "words": "173da7f8dfbb1563"
+  },
+  "/guide/compare/route4me": {
+    "updated": "2026-11-07",
+    "words": "e7f301fe38db3729"
+  },
+  "/guide/compare/routific": {
+    "updated": "2026-11-07",
+    "words": "bf9fd29d85d74e08"
+  },
+  "/guide/compare/spoke": {
+    "updated": "2026-11-07",
+    "words": "d035f2013d5a0860"
+  },
+  "/guide/compare/straightaway": {
+    "updated": "2026-11-07",
+    "words": "4d4269e32ebeb53f"
+  },
+  "/guide/compare/sygic": {
+    "updated": "2026-11-07",
+    "words": "11cd8b9df3b49e87"
+  },
+  "/guide/compare/upper": {
+    "updated": "2026-11-07",
+    "words": "a85a130710ddefbe"
+  },
+  "/guide/compare/wanderlog": {
+    "updated": "2026-11-07",
+    "words": "8d3faed664296d76"
+  },
+  "/guide/compare/waze": {
+    "updated": "2026-11-07",
+    "words": "340b5691c36f56cb"
+  },
+  "/guide/compare/zeo": {
+    "updated": "2026-11-07",
+    "words": "62f476c247936bab"
   }
 }
