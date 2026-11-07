@@ -1,5 +1,5 @@
-import publication from '../../scripts/publication.json';
-import pageDates from '../../scripts/page-dates.json';
+import publication from './publication.json';
+import pageDates from './page-dates.json';
 
 /** Formats a stored YYYY-MM-DD day the way every Waylock guide prints a date. */
 export function formatGuideDate(day: string): string {

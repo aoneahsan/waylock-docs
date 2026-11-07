@@ -1,7 +1,7 @@
 import {translate} from '@docusaurus/Translate';
 import firstFeedItem from './feed-item-en-GB.json';
 
-// Approved reader words for the sitemap, feed and topic pages. scripts/publication.json holds their fingerprints.
+// Approved reader words for the sitemap, feed and topic pages. src/content/publication.json holds their fingerprints.
 export const discovery = {
   sitemap: {
     title: translate({id: 'discovery.sitemap.title', message: 'Find a Waylock guide'}),

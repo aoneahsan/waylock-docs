@@ -1,4 +1,5 @@
 import type {Config} from '@docusaurus/types';
+import waylockBuildPlugin from './src/build/plugin';
 
 const siteUrl = 'https://waylock-docs.aoneahsan.com';
 const gaId = process.env.GA_MEASUREMENT_ID;
@@ -35,17 +36,14 @@ const config: Config = {
           ],
         },
         blog: false,
-        sitemap: {
-          lastmod: 'date',
-          changefreq: null,
-          priority: null,
-          ignorePatterns: ['/search/**', '/guide/tags/**'],
-        },
+        // src/build/site-output.ts writes sitemap.xml from the page ledger. Plugins' postBuild hooks run concurrently, so this one would race it.
+        sitemap: false,
         theme: {customCss: './src/css/custom.css'},
         ...(gaId ? {gtag: {trackingID: gaId, anonymizeIP: true}} : {}),
       },
     ],
   ],
+  plugins: [waylockBuildPlugin],
   themes: [
     [
       '@easyops-cn/docusaurus-search-local',

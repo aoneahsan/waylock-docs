@@ -5,11 +5,12 @@
   "packageManager": "yarn@4.18.1",
   "scripts": {
     "start": "docusaurus start",
-    "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build && node scripts/postbuild.mjs",
+    "build": "NODE_OPTIONS=--no-experimental-webstorage docusaurus build",
     "serve": "docusaurus serve",
     "typecheck": "tsc --noEmit",
-    "lint": "node scripts/check-content.mjs",
-    "publish:check": "node scripts/check-publication.mjs"
+    "lint": "docusaurus waylock:lint",
+    "publish:check": "docusaurus waylock:publish-check",
+    "ledger": "docusaurus waylock:ledger"
   },
   "dependenciesMeta": {
     "@swc/core": {
