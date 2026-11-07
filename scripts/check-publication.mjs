@@ -5,11 +5,15 @@ const required = [
   'routeControlsStoryGate4',
   'accountDataStoryGate4',
   'utilityStoryGate4',
-  'signedDeviceRouteProof',
-  'hostedDeletionAndStatusProof',
   'websiteLegalLinksLive',
 ];
 const pending = required.filter(key => gate[key] !== true);
+// D-082: the cautious wording ships with the APK. Device and deletion proof flip wording later; they never hold it back.
+for (const [flag, line] of [['signedDeviceRouteProof', 'Device proof is still missing.'],
+  ['hostedDeletionAndStatusProof', 'has not yet passed a live deletion test']]) {
+  const claimed = (await Promise.all(['docs/release-status.md', 'docs/account-and-data.md'].map((file) => readFile(file, 'utf8')))).join(' ').includes(line);
+  if (gate[flag] === true && claimed) throw new Error(`Proof is recorded for ${flag}, but the guides still say: ${line}`);
+}
 if (gate.status !== 'approved' || pending.length !== 0 || !/^\d{4}-\d{2}-\d{2}$/.test(gate.firstFeedPublicationDate ?? '')) {
   throw new Error(`Docs publication held: ${pending.join(', ') || gate.status}. Record exact proof and Story Gate 4 before deployment.`);
 }
@@ -18,6 +22,12 @@ if (Number.isNaN(published.getTime()) || published.toISOString().slice(0, 10) !=
   throw new Error('Invalid or future firstFeedPublicationDate');
 }
 const dates = JSON.parse(readFileSync(new URL('./page-dates.json', import.meta.url), 'utf8'));
+if (!gate.signedBuildVersion || !Number.isInteger(gate.signedBuildVersionCode)) {
+  throw new Error('Record signedBuildVersion and signedBuildVersionCode from the signed build before deployment');
+}
+if (dates['/guide/release-status'].updated < gate.firstFeedPublicationDate) {
+  throw new Error('/guide/release-status: last-updated date is older than its first publication date');
+}
 for (const path of Object.keys(dates).filter(path => path === '/sitemap' || path === '/feed' || path.startsWith('/guide/tags'))) {
   if (gate.utilityApprovedWords?.[path] !== dates[path].words) {
     throw new Error(`${path}: utility-page words differ from exact Story Gate 4 approval`);
@@ -35,12 +45,12 @@ const displayDate = new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'lo
 if (!feed.includes(`<pubDate>${published.toUTCString()}</pubDate>`) || !feedPage.includes(displayDate)) {
   throw new Error('Feed date differs from approved first publication date');
 }
-for (const path of ['/privacy', '/terms', '/delete-account']) {
+for (const path of ['/privacy', '/terms', '/delete-account', '/download', '/plans', '/account']) {
   const url = `https://waylock.aoneahsan.com${path}`;
   const response = await fetch(url, {signal: AbortSignal.timeout(10000)});
   const html = await response.text();
   if (!response.ok || new URL(response.url).origin !== 'https://waylock.aoneahsan.com' ||
       /<meta[^>]+(?:noindex|nofollow)|REVIEW CANDIDATE|DO NOT PUBLISH/i.test(html) || !html.includes('<main')) {
-    throw new Error(`${url}: live legal page is unavailable or still a review page`);
+    throw new Error(`${url}: live linked page is unavailable or still a review page`);
   }
 }

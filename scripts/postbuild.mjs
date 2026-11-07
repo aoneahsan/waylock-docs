@@ -80,7 +80,7 @@ if (firstDate !== null && (!/^\d{4}-\d{2}-\d{2}$/.test(firstDate) ||
 }
 const published = firstDate ? new Date(`${firstDate}T00:00:00Z`).toUTCString() : null;
 const firstItem = published ? `<item><title>${escapeXml(firstFeedItem.title)}</title><link>${host}/guide/release-status</link><guid isPermaLink="true">${host}/guide/release-status</guid><pubDate>${published}</pubDate><category>${escapeXml(firstFeedItem.category)}</category><description>${escapeXml(firstFeedItem.body)}</description></item>` : '';
-const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waylock guide updates</title><link>${host}/feed</link><description>Release and guide updates for Waylock.</description><language>en-GB</language>${published ? `<lastBuildDate>${published}</lastBuildDate>` : ''}<atom:link href="${host}/feed.xml" rel="self" type="application/rss+xml"/>${firstItem}</channel></rss>\n`;
+const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waylock guide updates</title><link>${host}/feed</link><description>Dated changes to Waylock's public guides and release status.</description><language>en-GB</language>${published ? `<lastBuildDate>${published}</lastBuildDate>` : ''}<atom:link href="${host}/feed.xml" rel="self" type="application/rss+xml"/>${firstItem}</channel></rss>\n`;
 writeFileSync(join(build, 'feed.xml'), rss);
 if (!existsSync(join(build, 'CNAME'))) throw new Error('CNAME missing from built output');
 process.stdout.write(`Verified ${routes.length} routes, sitemap.xml, feed.xml and CNAME.\n`);

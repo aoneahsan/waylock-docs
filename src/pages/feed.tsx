@@ -1,14 +1,10 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import publication from '../../scripts/publication.json';
 import {discovery} from '../content/discovery';
+import {firstPublicationDate, formatGuideDate} from '../content/publication';
 
-const firstPublicationDate = publication.firstFeedPublicationDate;
-const displayDate = firstPublicationDate
-  ? new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'})
-      .format(new Date(`${firstPublicationDate}T00:00:00Z`))
-  : null;
+const displayDate = firstPublicationDate ? formatGuideDate(firstPublicationDate) : null;
 
 export default function Feed(): React.JSX.Element {
   return <Layout title={discovery.feed.title} description={discovery.feed.description}>

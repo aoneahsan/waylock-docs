@@ -1,12 +1,12 @@
 import {translate} from '@docusaurus/Translate';
 import firstFeedItem from './feed-item-en-GB.json';
 
-// Proposed Story copy for the review build. Publication remains controlled by scripts/publication.json.
+// Approved reader words for the sitemap, feed and topic pages. scripts/publication.json holds their fingerprints.
 export const discovery = {
   sitemap: {
     title: translate({id: 'discovery.sitemap.title', message: 'Find a Waylock guide'}),
     description: translate({id: 'discovery.sitemap.description', message: 'Find the release-status, route-control and account guides, or browse them by topic.'}),
-    intro: translate({id: 'discovery.sitemap.intro', message: 'Start with the guide for your next question. The Android app is still in development, and the signed-device and Play checks remain open, so check release status before treating any planned route control as available in a released app.'}),
+    intro: translate({id: 'discovery.sitemap.intro', message: 'Start with the guide for your next question. The Android app is a signed APK on the download page and is not on Google Play yet, so check release status before relying on any planned route control.'}),
     search: translate({id: 'discovery.sitemap.search', message: 'Search pages'}),
     searchHint: translate({id: 'discovery.sitemap.searchHint', message: 'Route, account or release'}),
     empty: translate({id: 'discovery.sitemap.empty', message: 'No guides match that search.'}),
@@ -14,7 +14,7 @@ export const discovery = {
   feed: {
     title: translate({id: 'discovery.feed.title', message: 'Guide updates'}),
     description: translate({id: 'discovery.feed.description', message: "Dated changes to Waylock's public guides and release status."}),
-    intro: translate({id: 'discovery.feed.intro', message: 'No public guide update has a publication date yet. Once the site is released and a real publication date exists, this page will link each dated change to its guide so you can inspect what was verified at that point.'}),
+    intro: translate({id: 'discovery.feed.intro', message: 'No guide update has a date yet. When a guide changes, this page will link the dated change to its guide so you can inspect what was verified at that point.'}),
     introDated: translate({id: 'discovery.feed.introDated', message: 'A dated guide update appears below. Open its source guide for the current release position; the item records the change at its publication date, and the guide may change later.'}),
     rss: translate({id: 'discovery.feed.rss', message: 'Subscribe to RSS'}),
     empty: translate({id: 'discovery.feed.empty', message: 'No public updates yet.'}),
@@ -34,7 +34,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.account.label', message: 'Account'}),
     title: translate({id: 'discovery.topic.account.title', message: 'Account guides'}),
     description: translate({id: 'discovery.topic.account.description', message: 'Find Waylock account and data information.'}),
-    intro: translate({id: 'discovery.topic.account.intro', message: 'The account and data guide links to the Privacy Policy, Terms of Service and planned signed-in deletion page. Those website links still need live verification before this docs site is published.'}),
+    intro: translate({id: 'discovery.topic.account.intro', message: 'The account and data guide links to the Privacy Policy, Terms of Service and signed-in deletion page.'}),
     card: translate({id: 'discovery.topic.account.card', message: 'Account and data information.'}),
     sitemapCard: translate({id: 'discovery.topic.account.sitemapCard', message: 'Open the account and data guide.'}),
   },
@@ -42,7 +42,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.android.label', message: 'Android'}),
     title: translate({id: 'discovery.topic.android.title', message: 'Android guides'}),
     description: translate({id: 'discovery.topic.android.description', message: "Check Waylock's current Android status."}),
-    intro: translate({id: 'discovery.topic.android.intro', message: 'Waylock is in development. Read the release-status guide before looking for a verified Google Play listing.'}),
+    intro: translate({id: 'discovery.topic.android.intro', message: 'Waylock is a signed APK on the download page. Read the release-status guide before looking for a verified Google Play listing.'}),
     card: translate({id: 'discovery.topic.android.card', message: 'Current Android release status.'}),
     sitemapCard: translate({id: 'discovery.topic.android.sitemapCard', message: 'Open the current Android release-status guide.'}),
   },
@@ -50,7 +50,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.navigation.label', message: 'Navigation'}),
     title: translate({id: 'discovery.topic.navigation.title', message: 'Navigation guides'}),
     description: translate({id: 'discovery.topic.navigation.description', message: 'Read about planned route controls and verification limits.'}),
-    intro: translate({id: 'discovery.topic.navigation.intro', message: 'A locked route is planned as a visible overlay while Google Navigation SDK may reroute guidance, so the route-controls guide explains the intended choices even though signed-device proof remains open.'}),
+    intro: translate({id: 'discovery.topic.navigation.intro', message: 'A locked route is planned as a visible overlay while Google Navigation SDK may reroute guidance, so the route-controls guide explains the intended choices even though device proof remains open.'}),
     card: translate({id: 'discovery.topic.navigation.card', message: 'Planned locked-route choices after a wrong turn.'}),
     sitemapCard: translate({id: 'discovery.topic.navigation.sitemapCard', message: 'Open the planned route-controls guide.'}),
   },
@@ -58,7 +58,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.privacy.label', message: 'Privacy'}),
     title: translate({id: 'discovery.topic.privacy.title', message: 'Privacy guides'}),
     description: translate({id: 'discovery.topic.privacy.description', message: "Find Waylock's data and deletion links."}),
-    intro: translate({id: 'discovery.topic.privacy.intro', message: 'The account and data guide points to the Privacy Policy and planned signed-in deletion page. Live links and deletion behavior still need verification before publication.'}),
+    intro: translate({id: 'discovery.topic.privacy.intro', message: 'The account and data guide points to the Privacy Policy and signed-in deletion page. The deletion flow has not yet passed a live test.'}),
     card: translate({id: 'discovery.topic.privacy.card', message: 'Legal and signed-in deletion links.'}),
     sitemapCard: translate({id: 'discovery.topic.privacy.sitemapCard', message: 'Open the account and data guide for legal and deletion links.'}),
   },
@@ -66,7 +66,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.release.label', message: 'Release'}),
     title: translate({id: 'discovery.topic.release.title', message: 'Release guides'}),
     description: translate({id: 'discovery.topic.release.description', message: "Check Waylock's current Android availability."}),
-    intro: translate({id: 'discovery.topic.release.intro', message: 'The release-status guide records the checks still needed before a public Google Play listing and released app can be confirmed.'}),
+    intro: translate({id: 'discovery.topic.release.intro', message: 'The release-status guide records the checks still needed before a public Google Play listing can be confirmed.'}),
     card: translate({id: 'discovery.topic.release.card', message: 'What remains before a verified Play listing.'}),
     sitemapCard: translate({id: 'discovery.topic.release.sitemapCard', message: 'Open the current release-status guide.'}),
   },
@@ -74,7 +74,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.routes.label', message: 'Routes'}),
     title: translate({id: 'discovery.topic.routes.title', message: 'Route guides'}),
     description: translate({id: 'discovery.topic.routes.description', message: "Read about Waylock's planned route controls."}),
-    intro: translate({id: 'discovery.topic.routes.intro', message: 'The route-controls guide covers a stop lock, a distance range and the locked-route overlay. These controls still need signed-device verification.'}),
+    intro: translate({id: 'discovery.topic.routes.intro', message: 'The route-controls guide covers a stop lock, a distance range and the locked-route overlay. These controls still need device verification.'}),
     card: translate({id: 'discovery.topic.routes.card', message: 'Planned route and stop controls.'}),
     sitemapCard: translate({id: 'discovery.topic.routes.sitemapCard', message: 'Open the planned route-controls guide.'}),
   },
@@ -104,9 +104,9 @@ export function isTopicKey(value: string): value is TopicKey {
 
 export const sitemapPages = [
   {href: '/', title: translate({id: 'discovery.sitemap.overview.title', message: 'Guide overview'}), description: translate({id: 'discovery.sitemap.overview.description', message: "Start with Waylock's current status and the route-control guide index."}), tags: ['overview', 'start'], icon: '⌂'},
-  {href: '/guide/release-status', title: translate({id: 'discovery.sitemap.release.title', message: 'Release status'}), description: translate({id: 'discovery.sitemap.release.description', message: 'Check what remains before Waylock can be verified on Google Play.'}), tags: ['release', 'Android'], icon: '◷'},
+  {href: '/guide/release-status', title: translate({id: 'discovery.sitemap.release.title', message: 'Release status'}), description: translate({id: 'discovery.sitemap.release.description', message: 'Check where the signed APK stands and what remains before Google Play.'}), tags: ['release', 'Android'], icon: '◷'},
   {href: '/guide/route-controls', title: translate({id: 'discovery.sitemap.routes.title', message: 'Route controls'}), description: translate({id: 'discovery.sitemap.routes.description', message: 'Read about the planned stop lock, distance range and locked route.'}), tags: ['routes', 'stops'], icon: '◇'},
-  {href: '/guide/account-and-data', title: translate({id: 'discovery.sitemap.account.title', message: 'Account and data'}), description: translate({id: 'discovery.sitemap.account.description', message: 'Find the legal pages, support contact and planned signed-in deletion path.'}), tags: ['privacy', 'account'], icon: '□'},
+  {href: '/guide/account-and-data', title: translate({id: 'discovery.sitemap.account.title', message: 'Account and data'}), description: translate({id: 'discovery.sitemap.account.description', message: 'Find the legal pages, support contact and signed-in deletion path.'}), tags: ['privacy', 'account'], icon: '□'},
   {href: '/feed', title: translate({id: 'discovery.sitemap.feed.title', message: 'Guide updates'}), description: translate({id: 'discovery.sitemap.feed.description', message: 'Read dated guide changes once a public update exists.'}), tags: ['updates', 'feed'], icon: '↗'},
   {href: '/guide/tags', title: translate({id: 'discovery.sitemap.topics.title', message: 'All topics'}), description: translate({id: 'discovery.sitemap.topics.description', message: 'Browse the published guides by topic.'}), tags: ['topics'], icon: '▦'},
   ...topicKeys.map(key => ({href: `/guide/tags/${key}`, title: topicCopy[key].title, description: topicCopy[key].sitemapCard, tags: [key, 'topics'], icon: '◇'})),

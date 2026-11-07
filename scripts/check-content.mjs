@@ -1,9 +1,9 @@
 import {readFileSync, readdirSync} from 'node:fs';
 import {join} from 'node:path';
 
-const roots = ['docs', 'src/pages', 'src/content', 'src/theme', 'static'];
+const roots = ['docs', 'src/pages', 'src/content', 'src/components', 'src/theme', 'static'];
 const badNames = /(^|\/)(?:\.env(?:\.|$)|.*\.(?:jks|keystore|pem|p8)$|.*(?:secret|credential|serviceaccount).*)/i;
-const badText = /NEEDS DECISION|review candidate|TODO: publish|AIza[0-9A-Za-z_-]{20,}/i;
+const badText = /NEEDS DECISION|HELD UNTIL|SELF-CHECK|Mount check|Editorial status|Publication check|\bD-\d{3}\b|review candidate|TODO: publish|AIza[0-9A-Za-z_-]{20,}/i;
 let failures = 0;
 function inspect(directory) {
   for (const entry of readdirSync(directory, {withFileTypes: true})) {

@@ -1,13 +1,27 @@
 {
   "status": "held",
-  "routeControlsStoryGate4": false,
-  "accountDataStoryGate4": false,
-  "utilityStoryGate4": false,
-  "utilityApprovedWords": {},
-  "routeControlsApprovedWords": null,
-  "accountDataApprovedWords": null,
+  "routeControlsStoryGate4": true,
+  "accountDataStoryGate4": true,
+  "utilityStoryGate4": true,
+  "utilityApprovedWords": {
+    "/sitemap": "885119354700a620",
+    "/feed": "45f7780c28618067",
+    "/guide/tags/account": "f4e6b15cbdfbd34d",
+    "/guide/tags/android": "2f17a45f9eea0da6",
+    "/guide/tags/navigation": "7a71f4ab45ec2d98",
+    "/guide/tags/privacy": "43dd0d612a35eb9b",
+    "/guide/tags/release": "17f7d87a58a1df80",
+    "/guide/tags/routes": "fabf7a90094c9ede",
+    "/guide/tags/stops": "c16b5998c0df5da2",
+    "/guide/tags/support": "04c41a5833a997a3",
+    "/guide/tags": "5cee2877b6272281"
+  },
+  "routeControlsApprovedWords": "cb0e39d81cce7afb",
+  "accountDataApprovedWords": "45fc1a44b50e0a9f",
   "signedDeviceRouteProof": false,
   "hostedDeletionAndStatusProof": false,
   "websiteLegalLinksLive": false,
-  "firstFeedPublicationDate": null
+  "firstFeedPublicationDate": null,
+  "signedBuildVersion": null,
+  "signedBuildVersionCode": null
 }

@@ -1,17 +1,62 @@
 {
-  "/": {"updated": "2026-10-22", "words": "585db394d1ee7465"},
-  "/guide/release-status": {"updated": "2026-10-22", "words": "41ece2f42a8321c7"},
-  "/guide/route-controls": {"updated": "2026-10-22", "words": "223f639a38cbae72"},
-  "/guide/account-and-data": {"updated": "2026-10-22", "words": "14e423e5a27449bf"},
-  "/sitemap": {"updated": "2026-10-24", "words": "4aab1416745fd575"},
-  "/feed": {"updated": "2026-10-24", "words": "b951b0c80b01035e"},
-  "/guide/tags/account": {"updated": "2026-10-24", "words": "7c21efd35208c5ab"},
-  "/guide/tags/android": {"updated": "2026-10-24", "words": "ee6c16bb5d5540cf"},
-  "/guide/tags/navigation": {"updated": "2026-10-24", "words": "6ec341a1a5cc0ae6"},
-  "/guide/tags/privacy": {"updated": "2026-10-24", "words": "865000e96df1e860"},
-  "/guide/tags/release": {"updated": "2026-10-24", "words": "920d27c302febd46"},
-  "/guide/tags/routes": {"updated": "2026-10-24", "words": "a080c6e1824ef41d"},
-  "/guide/tags/stops": {"updated": "2026-10-24", "words": "c16b5998c0df5da2"},
-  "/guide/tags/support": {"updated": "2026-10-24", "words": "04c41a5833a997a3"},
-  "/guide/tags": {"updated": "2026-10-24", "words": "5cee2877b6272281"}
+  "/": {
+    "updated": "2026-11-07",
+    "words": "7a5f07bdb5a76dd7"
+  },
+  "/guide/release-status": {
+    "updated": "2026-11-07",
+    "words": "0d9f2210e20ebde1"
+  },
+  "/guide/route-controls": {
+    "updated": "2026-11-07",
+    "words": "cb0e39d81cce7afb"
+  },
+  "/guide/account-and-data": {
+    "updated": "2026-11-07",
+    "words": "45fc1a44b50e0a9f"
+  },
+  "/sitemap": {
+    "updated": "2026-11-07",
+    "words": "885119354700a620"
+  },
+  "/feed": {
+    "updated": "2026-11-07",
+    "words": "45f7780c28618067"
+  },
+  "/guide/tags/account": {
+    "updated": "2026-11-07",
+    "words": "f4e6b15cbdfbd34d"
+  },
+  "/guide/tags/android": {
+    "updated": "2026-11-07",
+    "words": "2f17a45f9eea0da6"
+  },
+  "/guide/tags/navigation": {
+    "updated": "2026-11-07",
+    "words": "7a71f4ab45ec2d98"
+  },
+  "/guide/tags/privacy": {
+    "updated": "2026-11-07",
+    "words": "43dd0d612a35eb9b"
+  },
+  "/guide/tags/release": {
+    "updated": "2026-11-07",
+    "words": "17f7d87a58a1df80"
+  },
+  "/guide/tags/routes": {
+    "updated": "2026-11-07",
+    "words": "fabf7a90094c9ede"
+  },
+  "/guide/tags/stops": {
+    "updated": "2026-10-24",
+    "words": "c16b5998c0df5da2"
+  },
+  "/guide/tags/support": {
+    "updated": "2026-10-24",
+    "words": "04c41a5833a997a3"
+  },
+  "/guide/tags": {
+    "updated": "2026-10-24",
+    "words": "5cee2877b6272281"
+  }
 }
