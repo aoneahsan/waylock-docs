@@ -1,11 +1,11 @@
 {
-  "status": "held",
+  "status": "approved",
   "routeControlsStoryGate4": true,
   "accountDataStoryGate4": true,
   "utilityStoryGate4": true,
   "utilityApprovedWords": {
     "/sitemap": "c89d8320e9274e97",
-    "/feed": "45f7780c28618067",
+    "/feed": "2fbc9256f8b55a4d",
     "/guide/tags/account": "b3128cd5dc3cc2fb",
     "/guide/tags/android": "2f17a45f9eea0da6",
     "/guide/tags/navigation": "7a71f4ab45ec2d98",
@@ -17,11 +17,11 @@
     "/guide/tags": "3c6de18712f6c080"
   },
   "routeControlsApprovedWords": "cb0e39d81cce7afb",
-  "accountDataApprovedWords": "45fc1a44b50e0a9f",
+  "accountDataApprovedWords": "d6cd439e87737a22",
   "signedDeviceRouteProof": false,
   "hostedDeletionAndStatusProof": false,
-  "websiteLegalLinksLive": false,
-  "firstFeedPublicationDate": null,
+  "websiteLegalLinksLive": true,
+  "firstFeedPublicationDate": "2026-11-08",
   "signedBuildVersion": "1.2.0",
   "signedBuildVersionCode": 2
 }

@@ -60,12 +60,15 @@ export async function checkPublication({siteDir, outDir}: {siteDir: string; outD
   if (!feed.includes(`<pubDate>${published.toUTCString()}</pubDate>`) || !feedPage.includes(displayDate)) {
     throw new Error('Feed date differs from approved first publication date');
   }
+  // /account is a signed-in page and stays noindex by design; the public pages must be indexable.
+  const signedIn = new Set(['/account']);
   for (const path of ['/privacy', '/terms', '/delete-account', '/download', '/plans', '/account']) {
     const url = `https://waylock.aoneahsan.com${path}`;
     const response = await fetch(url, {signal: AbortSignal.timeout(10000)});
     const html = await response.text();
+    const indexBlocked = /<meta[^>]+(?:noindex|nofollow)/i.test(html) && !signedIn.has(path);
     if (!response.ok || new URL(response.url).origin !== 'https://waylock.aoneahsan.com' ||
-        /<meta[^>]+(?:noindex|nofollow)|REVIEW CANDIDATE|DO NOT PUBLISH/i.test(html) || !html.includes('<main')) {
+        indexBlocked || /REVIEW CANDIDATE|DO NOT PUBLISH/i.test(html) || !html.includes('<main')) {
       throw new Error(`${url}: live linked page is unavailable or still a review page`);
     }
   }
