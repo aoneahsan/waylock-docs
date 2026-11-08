@@ -80,6 +80,7 @@ const config: Config = {
           {label: 'Release status', to: '/guide/release-status'},
           {label: 'Route controls', to: '/guide/route-controls'},
           {label: 'Sitemap', to: '/sitemap'},
+          {label: 'Updates', to: '/feed'},
         ]},
         {title: 'Waylock', items: [
           {label: 'Privacy Policy', href: 'https://waylock.aoneahsan.com/privacy'},

@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {existsSync, readdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 
 const host = 'https://waylock-docs.aoneahsan.com';
@@ -105,6 +105,19 @@ function writeFeed({siteDir, outDir}: SitePaths): void {
 }
 
 /**
+ * GitHub Pages answers `/guide/x/` from `guide/x/index.html`, so each page gets a tiny noindexed hop to its clean URL.
+ * Without it, the slash variant of a shared link is a 404.
+ */
+function writeSlashRedirects(outDir: string, routes: Route[]): void {
+  for (const route of routes.filter(item => item.path !== '/')) {
+    const target = escapeXml(host + route.path);
+    mkdirSync(join(outDir, route.path.slice(1)), {recursive: true});
+    writeFileSync(join(outDir, route.path.slice(1), 'index.html'),
+      `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="robots" content="noindex"><link rel="canonical" href="${target}"><meta http-equiv="refresh" content="0; url=${target}"><title>Waylock guides</title></head><body><a href="${target}">${target}</a></body></html>`);
+  }
+}
+
+/**
  * Holds every built page to its recorded words and date, then writes sitemap.xml, feed.xml and the noindexed 404.
  * Runs synchronously so a concurrent postBuild hook never reads a half-written file.
  */
@@ -121,6 +134,7 @@ export function verifyAndWriteSiteOutput({siteDir, outDir}: SitePaths): void {
   if (Object.keys(ledger).length !== routes.length) throw new Error('page-dates.json includes a stale or missing route');
   writeSitemap(outDir, routes);
   writeNotFound(outDir);
+  writeSlashRedirects(outDir, routes);
   writeFeed({siteDir, outDir});
   if (!existsSync(join(outDir, 'CNAME'))) throw new Error('CNAME missing from built output');
   process.stdout.write(`Verified ${routes.length} routes, sitemap.xml, feed.xml and CNAME.\n`);
