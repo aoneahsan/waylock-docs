@@ -22,6 +22,6 @@
   "hostedDeletionAndStatusProof": false,
   "websiteLegalLinksLive": false,
   "firstFeedPublicationDate": null,
-  "signedBuildVersion": null,
-  "signedBuildVersionCode": null
+  "signedBuildVersion": "1.2.0",
+  "signedBuildVersionCode": 2
 }
