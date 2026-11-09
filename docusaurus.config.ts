@@ -98,6 +98,10 @@ const config: Config = {
     ],
   },
   headTags: [
+    {
+      tagName: 'meta',
+      attributes: {name: 'yandex-verification', content: 'bfb02722189028cf'},
+    },
     {tagName: 'link', attributes: {rel: 'alternate', type: 'application/rss+xml', title: 'Waylock guide updates', href: `${siteUrl}/feed.xml`}},
   ],
 };
