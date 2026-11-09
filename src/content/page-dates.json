@@ -1,11 +1,11 @@
 {
   "/": {
-    "updated": "2026-11-07",
-    "words": "7a5f07bdb5a76dd7"
+    "updated": "2026-11-09",
+    "words": "8acd8b93cb5c0f70"
   },
   "/guide/release-status": {
-    "updated": "2026-11-08",
-    "words": "4696b4fbc3cd239a"
+    "updated": "2026-11-09",
+    "words": "7997eb41fae393b5"
   },
   "/guide/route-controls": {
     "updated": "2026-11-07",
@@ -16,20 +16,20 @@
     "words": "d6cd439e87737a22"
   },
   "/sitemap": {
-    "updated": "2026-11-07",
-    "words": "c89d8320e9274e97"
+    "updated": "2026-11-09",
+    "words": "f719240191eadb06"
   },
   "/feed": {
-    "updated": "2026-11-08",
-    "words": "2fbc9256f8b55a4d"
+    "updated": "2026-11-09",
+    "words": "49679b714e63f81f"
   },
   "/guide/tags/account": {
     "updated": "2026-11-07",
     "words": "b3128cd5dc3cc2fb"
   },
   "/guide/tags/android": {
-    "updated": "2026-11-07",
-    "words": "2f17a45f9eea0da6"
+    "updated": "2026-11-09",
+    "words": "e5271066822e54eb"
   },
   "/guide/tags/navigation": {
     "updated": "2026-11-07",
@@ -64,83 +64,83 @@
     "words": "0e6190543168f7b6"
   },
   "/guide/compare/furkot": {
-    "updated": "2026-11-07",
-    "words": "2300e9a166d0607f"
+    "updated": "2026-11-09",
+    "words": "0c11d696ce8fa819"
   },
   "/guide/compare/google-maps": {
-    "updated": "2026-11-07",
-    "words": "9e245ce94ca64b9e"
+    "updated": "2026-11-09",
+    "words": "2b748e58d5772140"
   },
   "/guide/compare/inroute": {
-    "updated": "2026-11-07",
-    "words": "20d170cc2948acb0"
+    "updated": "2026-11-09",
+    "words": "966507a822de032f"
   },
   "/guide/compare/magic-earth": {
-    "updated": "2026-11-07",
-    "words": "00b19d6bd716d633"
+    "updated": "2026-11-09",
+    "words": "dcab3b11acf089e6"
   },
   "/guide/compare/maposcope": {
-    "updated": "2026-11-07",
-    "words": "535aae272a2a8c87"
+    "updated": "2026-11-09",
+    "words": "d1a1f4f49d288e00"
   },
   "/guide/compare/myrouteonline": {
-    "updated": "2026-11-07",
-    "words": "273e6b5cbaaebaa6"
+    "updated": "2026-11-09",
+    "words": "e0acf35765f3a482"
   },
   "/guide/compare/optimoroute": {
-    "updated": "2026-11-07",
-    "words": "092ac7e84e54d9b9"
+    "updated": "2026-11-09",
+    "words": "f1620d8567f0458d"
   },
   "/guide/compare/organic-maps": {
-    "updated": "2026-11-07",
-    "words": "c0c24a5423d0393e"
+    "updated": "2026-11-09",
+    "words": "e53afdc04258501b"
   },
   "/guide/compare/osmand": {
-    "updated": "2026-11-07",
-    "words": "ea4095c6432f44ce"
+    "updated": "2026-11-09",
+    "words": "263c87902221c111"
   },
   "/guide/compare/roadtrippers": {
-    "updated": "2026-11-07",
-    "words": "b797401e44ba1969"
+    "updated": "2026-11-09",
+    "words": "104c1bfaac6ce3cc"
   },
   "/guide/compare/roadwarrior": {
-    "updated": "2026-11-07",
-    "words": "173da7f8dfbb1563"
+    "updated": "2026-11-09",
+    "words": "eabf5fd88a4fbed2"
   },
   "/guide/compare/route4me": {
-    "updated": "2026-11-07",
-    "words": "e7f301fe38db3729"
+    "updated": "2026-11-09",
+    "words": "9003c4b1a99e620b"
   },
   "/guide/compare/routific": {
-    "updated": "2026-11-07",
-    "words": "bf9fd29d85d74e08"
+    "updated": "2026-11-09",
+    "words": "66151455a1bf2de5"
   },
   "/guide/compare/spoke": {
-    "updated": "2026-11-07",
-    "words": "d035f2013d5a0860"
+    "updated": "2026-11-09",
+    "words": "f25a0ed8e6349fe1"
   },
   "/guide/compare/straightaway": {
-    "updated": "2026-11-07",
-    "words": "4d4269e32ebeb53f"
+    "updated": "2026-11-09",
+    "words": "c660f338aed0ad9d"
   },
   "/guide/compare/sygic": {
-    "updated": "2026-11-07",
-    "words": "11cd8b9df3b49e87"
+    "updated": "2026-11-09",
+    "words": "fb0983fe9e4811c1"
   },
   "/guide/compare/upper": {
-    "updated": "2026-11-07",
-    "words": "a85a130710ddefbe"
+    "updated": "2026-11-09",
+    "words": "38009453667cb5d5"
   },
   "/guide/compare/wanderlog": {
-    "updated": "2026-11-07",
-    "words": "8d3faed664296d76"
+    "updated": "2026-11-09",
+    "words": "013a99960039d3a7"
   },
   "/guide/compare/waze": {
-    "updated": "2026-11-07",
-    "words": "340b5691c36f56cb"
+    "updated": "2026-11-09",
+    "words": "dbaf5635bf525c3d"
   },
   "/guide/compare/zeo": {
-    "updated": "2026-11-07",
-    "words": "62f476c247936bab"
+    "updated": "2026-11-09",
+    "words": "160d52407392cb62"
   }
 }

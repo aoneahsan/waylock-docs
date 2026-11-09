@@ -6,7 +6,7 @@ export const discovery = {
   sitemap: {
     title: translate({id: 'discovery.sitemap.title', message: 'Find a Waylock guide'}),
     description: translate({id: 'discovery.sitemap.description', message: 'Find the release-status, route-control and account guides, or browse them by topic.'}),
-    intro: translate({id: 'discovery.sitemap.intro', message: 'Start with the guide for your next question. The Android app is a signed APK on the download page and is not on Google Play yet, so check release status before relying on any planned route control.'}),
+    intro: translate({id: 'discovery.sitemap.intro', message: 'Start with the guide for your next question. Waylock is in internal testing. Public installation is not available yet. Check release status before relying on any planned route control.'}),
     search: translate({id: 'discovery.sitemap.search', message: 'Search pages'}),
     searchHint: translate({id: 'discovery.sitemap.searchHint', message: 'Route, account or release'}),
     empty: translate({id: 'discovery.sitemap.empty', message: 'No guides match that search.'}),
@@ -42,7 +42,7 @@ export const topicCopy = {
     label: translate({id: 'discovery.topic.android.label', message: 'Android'}),
     title: translate({id: 'discovery.topic.android.title', message: 'Android guides'}),
     description: translate({id: 'discovery.topic.android.description', message: "Check Waylock's current Android status."}),
-    intro: translate({id: 'discovery.topic.android.intro', message: 'Waylock is a signed APK on the download page. Read the release-status guide before looking for a verified Google Play listing.'}),
+    intro: translate({id: 'discovery.topic.android.intro', message: 'Waylock is in internal testing. Public installation is not available yet. Read the release-status guide before looking for a verified Google Play listing.'}),
     card: translate({id: 'discovery.topic.android.card', message: 'Current Android release status.'}),
     sitemapCard: translate({id: 'discovery.topic.android.sitemapCard', message: 'Open the current Android release-status guide.'}),
   },
@@ -104,7 +104,7 @@ export function isTopicKey(value: string): value is TopicKey {
 
 export const sitemapPages = [
   {href: '/', title: translate({id: 'discovery.sitemap.overview.title', message: 'Guide overview'}), description: translate({id: 'discovery.sitemap.overview.description', message: "Start with Waylock's current status and the route-control guide index."}), tags: ['overview', 'start'], icon: '⌂'},
-  {href: '/guide/release-status', title: translate({id: 'discovery.sitemap.release.title', message: 'Release status'}), description: translate({id: 'discovery.sitemap.release.description', message: 'Check where the signed APK stands and what remains before Google Play.'}), tags: ['release', 'Android'], icon: '◷'},
+  {href: '/guide/release-status', title: translate({id: 'discovery.sitemap.release.title', message: 'Release status'}), description: translate({id: 'discovery.sitemap.release.description', message: 'Waylock is in internal testing. Public installation is not available yet.'}), tags: ['release', 'Android'], icon: '◷'},
   {href: '/guide/route-controls', title: translate({id: 'discovery.sitemap.routes.title', message: 'Route controls'}), description: translate({id: 'discovery.sitemap.routes.description', message: 'Read about the planned stop lock, distance range and locked route.'}), tags: ['routes', 'stops'], icon: '◇'},
   {href: '/guide/account-and-data', title: translate({id: 'discovery.sitemap.account.title', message: 'Account and data'}), description: translate({id: 'discovery.sitemap.account.description', message: 'Find the legal pages, support contact and signed-in deletion path.'}), tags: ['privacy', 'account'], icon: '□'},
   {href: '/guide/compare', title: translate({id: 'discovery.sitemap.compare.title', message: 'Moving from another app'}), description: translate({id: 'discovery.sitemap.compare.description', message: 'How twenty other route and road trip apps differ from Waylock, and where to start here.'}), tags: ['routes', 'compare'], icon: '↔'},

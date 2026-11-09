@@ -38,7 +38,7 @@ export default function Home(): React.JSX.Element {
             <a href="#account"><Translate id="home.nav.account">Account and data</Translate></a>
             <a href="#help"><Translate id="home.nav.help">Get help</Translate></a>
           </nav>
-          <div className="side-status"><span className="status-dot"/><Translate id="home.status.short">Android app: signed APK</Translate></div>
+          <div className="side-status"><span className="status-dot"/><Translate id="home.status.short">Waylock is in internal testing.</Translate></div>
         </aside>
         <main id="main" className="guide-home-main">
           <section id="overview" className="guide-hero">
@@ -55,7 +55,7 @@ export default function Home(): React.JSX.Element {
             </div>
           </section>
           <section id="availability" className="guide-notice">
-            <div><span className="notice-label"><Translate id="home.releaseStatus">Release status</Translate></span><h2><Translate id="home.development">Is Waylock available yet?</Translate></h2><p><Translate id="home.releaseDetail" values={{downloadPage: <a href="https://waylock.aoneahsan.com/download"><Translate id="home.downloadPage">download page</Translate></a>}}>{'Yes, as a signed APK for Android 8.0 or newer on the {downloadPage}. Waylock is not on Google Play yet. These guides change when a release does. Device checks on the route controls remain open, so until those checks pass, these guides describe planned controls rather than steps you can rely on.'}</Translate></p><Link to="/guide/release-status"><Translate id="home.releaseReadMore">Read the current release status</Translate> ↗</Link></div>
+            <div><span className="notice-label"><Translate id="home.releaseStatus">Release status</Translate></span><h2><Translate id="home.development">Is Waylock available yet?</Translate></h2><p><Translate id="home.releaseDetail">Waylock is in internal testing. Public installation is not available yet. These guides change when a release does. Device checks on the route controls remain open, so until those checks pass, these guides describe planned controls rather than steps you can rely on.</Translate></p><Link to="/guide/release-status"><Translate id="home.releaseReadMore">Read the current release status</Translate> ↗</Link></div>
             <span className="notice-seal" aria-hidden="true">W</span>
           </section>
           <section id="route-controls" className="guide-group">

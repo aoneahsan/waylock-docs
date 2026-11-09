@@ -7,7 +7,7 @@ export function formatGuideDate(day: string): string {
     .format(new Date(`${day}T00:00:00Z`));
 }
 
-/** The day the signed APK and the release-status wording go live. Unset until that day: no feed item, no dated claim. */
+/** First public docs update date; the release status may later change without changing this historical date. */
 export const firstPublicationDate = publication.firstFeedPublicationDate as string | null;
 export const signedBuildVersion = publication.signedBuildVersion as string | null;
 export const signedBuildVersionCode = publication.signedBuildVersionCode as number | null;

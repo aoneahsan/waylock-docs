@@ -1,6 +1,6 @@
 # Waylock guides
 
-This repository holds the public Waylock guides for `https://waylock-docs.aoneahsan.com/`. It uses Docusaurus 3, TypeScript and Yarn. The initial pages describe planned Android controls and state clearly that Waylock is not yet listed on Google Play.
+This repository holds the public Waylock guides for `https://waylock-docs.aoneahsan.com/`. It uses Docusaurus 3, TypeScript and Yarn. The pages describe planned Android controls and state that Waylock is in Play internal testing without a public install path.
 
 ## Local checks
 
@@ -21,7 +21,7 @@ The build produces `build/` with prerendered pages, `sitemap.xml`, `feed.xml`, `
 - Task guides: `docs/` and `sidebars.ts`. Keep claims tied to observed app behaviour and the release-status page.
 - Site config, SEO and host: `docusaurus.config.ts`, `src/build/` (a local plugin: page-ledger checks, `sitemap.xml`, `feed.xml`, 404 and the `waylock:*` commands), `static/robots.txt`, and `static/CNAME`.
 - Public links to Waylock's Privacy Policy, Terms and deletion page point to the marketing host. Verify those pages are live before publishing this site.
-- Story Gate 4 covers every page here. `yarn publish:check` refuses a deploy until `src/content/publication.json` records the signed build's version and the first feed date and the linked website pages are live. Device and deletion proof only flip wording: once recorded, the check refuses the cautious lines. Those words say the signed APK is on the download page, so they must not go live before it is.
+- Story Gate 4 covers every page here. `yarn publish:check` requires the approved release facts and live website links. Device and deletion proof later determine when cautious wording can change. The public guides do not link to an APK while Waylock is in Play internal testing.
 - After a words change, `yarn build` names the page that moved; `yarn ledger` prints the fingerprints for `src/content/page-dates.json`.
 
 The project owner controls Play submission and DNS. Account deletion will use signed-in self-service on the website and fresh Google confirmation in-app; both require live proof before publication.

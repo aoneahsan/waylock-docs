@@ -30,7 +30,7 @@ The [full comparison](https://waylock.aoneahsan.com/compare/spoke) has both sets
 
 Waylock has no import from other apps yet, so this is a fresh start.
 
-1. Install the signed APK from the [download page](https://waylock.aoneahsan.com/download). It needs Android 8.0 or newer.
+1. Waylock is in internal testing. Public installation is not available yet.
 2. Sign in with Google.
 3. On the Delivery planner, add your stops, hold any that must keep their place, and get the order.
 4. Keep Spoke Route Planner until you have tried a route.

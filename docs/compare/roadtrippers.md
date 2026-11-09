@@ -30,7 +30,7 @@ The [full comparison](https://waylock.aoneahsan.com/compare/roadtrippers) has bo
 
 Waylock has no import from other apps yet, so this is a fresh start.
 
-1. Install the signed APK from the [download page](https://waylock.aoneahsan.com/download). It needs Android 8.0 or newer.
+1. Waylock is in internal testing. Public installation is not available yet.
 2. Sign in with Google.
 3. On the Trip planner, set where you start and finish, then ask for a stop by distance along the road.
 4. Keep Roadtrippers until you have tried a route.

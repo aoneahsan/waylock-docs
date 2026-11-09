@@ -1,6 +1,6 @@
 # Waylock guides
 
-Waylock is an Android route-planning app, available as a signed APK for Android 8.0 or newer and not on Google Play yet. Device checks on the route controls remain open, so these guides describe planned controls rather than steps you can rely on.
+Waylock is an Android route-planning app. Waylock is in internal testing. Public installation is not available yet. Device checks on the route controls remain open, so these guides describe planned controls rather than steps you can rely on.
 
 ## Start here
 - [Guide overview](https://waylock-docs.aoneahsan.com/)

@@ -8,13 +8,13 @@ tags: [release, Android]
 slug: /release-status
 ---
 
-import {BuildStatus, GuideByline, PlayCheckedOn} from '@site/src/components/ReleaseFacts';
+import {BuildStatus, GuideByline} from '@site/src/components/ReleaseFacts';
 
 # Is Waylock available yet?
 
 <GuideByline path="/guide/release-status" />
 
-Yes, as a signed APK for Android 8.0 or newer on the [download page](https://waylock.aoneahsan.com/download). It is not listed on Google Play<PlayCheckedOn />. Plans are bought on the [website](https://waylock.aoneahsan.com/plans) through Polar, not in the app.
+Waylock is in internal testing. Public installation is not available yet. Invited testers install through Google Play using the private opt-in link. This page will link to Google Play when open testing or production begins. Plans are bought on the [website](https://waylock.aoneahsan.com/plans) through Polar, not in the app.
 
 <BuildStatus /> These guides describe intended controls, not instructions proven on a device.
 
