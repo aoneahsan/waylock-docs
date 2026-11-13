@@ -16,8 +16,8 @@
     "words": "d6cd439e87737a22"
   },
   "/sitemap": {
-    "updated": "2026-11-09",
-    "words": "f719240191eadb06"
+    "updated": "2026-11-13",
+    "words": "669b480c80b1d7ed"
   },
   "/feed": {
     "updated": "2026-11-09",
@@ -59,9 +59,33 @@
     "updated": "2026-10-24",
     "words": "3c6de18712f6c080"
   },
+  "/guide/white-label": {
+    "updated": "2026-11-13",
+    "words": "f8c3f75e272bd5ff"
+  },
+  "/guide/white-label/delivery": {
+    "updated": "2026-11-13",
+    "words": "2a90ad025d873bc0"
+  },
+  "/guide/white-label/faq": {
+    "updated": "2026-11-13",
+    "words": "c3b191cdae66a57a"
+  },
+  "/guide/white-label/setup": {
+    "updated": "2026-11-13",
+    "words": "c32fc9fcfbc106f8"
+  },
+  "/guide/white-label/updates": {
+    "updated": "2026-11-13",
+    "words": "319ef5a2f4dbba31"
+  },
+  "/guide/white-label/verify": {
+    "updated": "2026-11-13",
+    "words": "62eb5110c61338ef"
+  },
   "/guide/compare": {
-    "updated": "2026-11-07",
-    "words": "0e6190543168f7b6"
+    "updated": "2026-11-13",
+    "words": "cd4e866903094d57"
   },
   "/guide/compare/furkot": {
     "updated": "2026-11-09",

@@ -86,6 +86,7 @@ const config: Config = {
           {label: 'Privacy Policy', href: 'https://waylock.aoneahsan.com/privacy'},
           {label: 'Terms of Service', href: 'https://waylock.aoneahsan.com/terms'},
           {label: 'Account deletion', href: 'https://waylock.aoneahsan.com/delete-account'},
+          {label: 'White-label', to: '/guide/white-label'},
         ]},
       ],
       copyright: 'Waylock guides',

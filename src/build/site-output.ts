@@ -28,6 +28,10 @@ function listRoutes(outDir: string): Route[] {
     if (name.endsWith('.html')) routes.push({path: `/guide/tags/${name.slice(0, -5)}`, file: `guide/tags/${name}`});
   }
   routes.push({path: '/guide/tags', file: 'guide/tags.html'});
+  routes.push({path: '/guide/white-label', file: 'guide/white-label.html'});
+  for (const name of readdirSync(join(outDir, 'guide/white-label'))) {
+    if (name.endsWith('.html')) routes.push({path: `/guide/white-label/${name.slice(0, -5)}`, file: `guide/white-label/${name}`});
+  }
   routes.push({path: '/guide/compare', file: 'guide/compare.html'});
   for (const name of readdirSync(join(outDir, 'guide/compare'))) {
     if (name.endsWith('.html')) routes.push({path: `/guide/compare/${name.slice(0, -5)}`, file: `guide/compare/${name}`});

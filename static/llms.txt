@@ -9,6 +9,15 @@ Waylock is an Android route-planning app. Waylock is in internal testing. Public
 - [Account and data](https://waylock-docs.aoneahsan.com/guide/account-and-data)
 - [Moving from another app](https://waylock-docs.aoneahsan.com/guide/compare)
 
+## White-label & licensing
+- [Running Waylock under your own brand](https://waylock-docs.aoneahsan.com/guide/white-label)
+- [What is delivered](https://waylock-docs.aoneahsan.com/guide/white-label/delivery)
+- [From payment to launch](https://waylock-docs.aoneahsan.com/guide/white-label/setup)
+- [Updates and renewals](https://waylock-docs.aoneahsan.com/guide/white-label/updates)
+- [Checking a licence](https://waylock-docs.aoneahsan.com/guide/white-label/verify)
+- [Questions buyers ask](https://waylock-docs.aoneahsan.com/guide/white-label/faq)
+- Prices: [licence price](https://waylock.aoneahsan.com/white-label/pricing), [buyout](https://waylock.aoneahsan.com/white-label/buyout), [verify a licence](https://waylock.aoneahsan.com/verify-license)
+
 ## Related site
 - [Waylock](https://waylock.aoneahsan.com/)
 - [Compare Waylock with other route and road trip apps](https://waylock.aoneahsan.com/compare)
