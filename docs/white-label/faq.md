@@ -19,7 +19,7 @@ No. A licence covers your built app and the services we run for it. The code cha
 
 ## Can another firm license Waylock as well?
 
-Yes, until somebody buys it outright. A buyout ends sales to anyone else; licences sold before it keep their terms.
+Yes, until somebody buys it outright. A buyout ends sales to anyone else, and the buyer pays us a 7% royalty on the gross revenue Waylock earns; licences sold before it keep their terms.
 
 ## Who publishes the app on Google Play?
 
@@ -32,6 +32,8 @@ Not today. Waylock is built for Android. An iOS build is delivered on request wh
 ## What does a buyout hand over?
 
 The Android app repository, with the Supabase migrations and server functions it runs on, the website repository and the guides repository, plus six months of updates. Google Maps Platform, Google Play, Supabase and payment accounts are opened in your name.
+
+The buyout agreement carries a royalty: you pay us 7% of the gross revenue Waylock earns, not counting sales tax or VAT collected. It is paid each quarter with a revenue statement, for as long as Waylock earns revenue, and it is still owed after you sell Waylock on. The [licence terms](https://waylock.aoneahsan.com/white-label/license-terms) set it out.
 
 ## Can you change Waylock just for my drivers?
 

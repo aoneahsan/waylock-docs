@@ -13,7 +13,7 @@ import {GuideByline} from '@site/src/components/ReleaseFacts';
 
 <GuideByline path="/guide/white-label/setup" />
 
-Access starts when the payment is confirmed to our licensing service, not when you return to the website from the payment page. The licence email carries your key and certificate.
+You pay by bank transfer to our Wise account from the payment page, and send us the transfer reference. Access starts when we have confirmed the transfer, not when you return to the website from the payment page. The licence email carries your key and certificate.
 
 ## The order of work
 

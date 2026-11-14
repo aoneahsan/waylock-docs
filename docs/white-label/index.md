@@ -20,7 +20,7 @@ It suits a courier firm, a dispatch office or a field team that wants stop locks
 ## Two ways to buy
 
 - **Licence.** We host and update your branded copy. The source code stays with us, and other firms can license Waylock too until someone buys it outright.
-- **Buyout.** You receive the source code and Waylock comes off sale to everyone else.
+- **Buyout.** You receive the source code and Waylock comes off sale to everyone else. You then pay us a 7% royalty on the gross revenue Waylock earns, for as long as it earns ([how the royalty works](./faq.md#what-does-a-buyout-hand-over)).
 
 The [licence price page](https://waylock.aoneahsan.com/white-label/pricing) and the [buyout page](https://waylock.aoneahsan.com/white-label/buyout) show the current amounts, read from our licensing service. This guide does not repeat them, so it never shows an old number.
 
