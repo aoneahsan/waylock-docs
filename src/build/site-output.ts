@@ -15,6 +15,13 @@ function readJson<T>(path: string): T {
   return JSON.parse(readFileSync(path, 'utf8')) as T;
 }
 
+/** The pages inside one built folder. Its index.html is the folder's own page, listed separately under its clean path. */
+function folderRoutes(outDir: string, folder: string): Route[] {
+  return readdirSync(join(outDir, folder))
+    .filter(name => name.endsWith('.html') && name !== 'index.html')
+    .map(name => ({path: `/${folder}/${name.slice(0, -5)}`, file: `${folder}/${name}`}));
+}
+
 function listRoutes(outDir: string): Route[] {
   const routes: Route[] = [
     {path: '/', file: 'index.html'},
@@ -24,18 +31,12 @@ function listRoutes(outDir: string): Route[] {
     {path: '/sitemap', file: 'sitemap.html'},
     {path: '/feed', file: 'feed.html'},
   ];
-  for (const name of readdirSync(join(outDir, 'guide/tags'))) {
-    if (name.endsWith('.html')) routes.push({path: `/guide/tags/${name.slice(0, -5)}`, file: `guide/tags/${name}`});
-  }
+  routes.push(...folderRoutes(outDir, 'guide/tags'));
   routes.push({path: '/guide/tags', file: 'guide/tags.html'});
   routes.push({path: '/guide/white-label', file: 'guide/white-label.html'});
-  for (const name of readdirSync(join(outDir, 'guide/white-label'))) {
-    if (name.endsWith('.html')) routes.push({path: `/guide/white-label/${name.slice(0, -5)}`, file: `guide/white-label/${name}`});
-  }
+  routes.push(...folderRoutes(outDir, 'guide/white-label'));
   routes.push({path: '/guide/compare', file: 'guide/compare.html'});
-  for (const name of readdirSync(join(outDir, 'guide/compare'))) {
-    if (name.endsWith('.html')) routes.push({path: `/guide/compare/${name.slice(0, -5)}`, file: `guide/compare/${name}`});
-  }
+  routes.push(...folderRoutes(outDir, 'guide/compare'));
   return routes;
 }
 
