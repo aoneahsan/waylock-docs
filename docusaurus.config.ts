@@ -1,8 +1,20 @@
+import {readFileSync} from 'node:fs';
 import type {Config} from '@docusaurus/types';
 import waylockBuildPlugin from './src/build/plugin';
 
 const siteUrl = 'https://waylock-docs.aoneahsan.com';
+// Analytics ids come from the deploy shell (FilesHub Waylock vault); this repo is public, so none is committed.
+// `yarn publish:check` refuses a deploy whose built pages lack any of the three.
 const gaId = process.env.GA_MEASUREMENT_ID;
+const analytics = {
+  clarityId: process.env.CLARITY_PROJECT_ID ?? '',
+  amplitudeKey: process.env.AMPLITUDE_API_KEY ?? '',
+};
+
+// The one Appearance control, in the header at every width; src/client/appearance.ts opens the panel.
+const icon = (name: string) => readFileSync(new URL(`./src/icons/${name}.svg`, import.meta.url), 'utf8').trim()
+  .replace('<svg ', `<svg class="theme-icon-${name}" aria-hidden="true" `);
+const themeButton = `<button type="button" class="waylock-theme-button" data-action="theme" aria-label="Appearance" aria-controls="waylock-theme-panel">${icon('moon')}${icon('sun')}</button>`;
 
 const config: Config = {
   title: 'Waylock guides',
@@ -15,6 +27,8 @@ const config: Config = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   future: {v4: true, faster: true},
+  // Unnamespaced, so Docusaurus reads the plain `theme` key static/appearance-prepaint.js writes before it runs.
+  storage: {type: 'localStorage', namespace: false},
   i18n: {defaultLocale: 'en-GB', locales: ['en-GB']},
   markdown: {hooks: {onBrokenMarkdownLinks: 'throw'}},
   presets: [
@@ -39,12 +53,13 @@ const config: Config = {
         blog: false,
         // src/build/site-output.ts writes sitemap.xml from the page ledger. Plugins' postBuild hooks run concurrently, so this one would race it.
         sitemap: false,
-        theme: {customCss: './src/css/custom.css'},
+        theme: {customCss: ['./src/css/custom.css', './src/css/appearance.css']},
         ...(gaId ? {gtag: {trackingID: gaId, anonymizeIP: true}} : {}),
       },
     ],
   ],
-  clientModules: ['./src/client/legal-notice.ts'],
+  customFields: {analytics},
+  clientModules: ['./src/client/legal-notice.ts', './src/client/analytics.ts', './src/client/appearance.ts'],
   plugins: [waylockBuildPlugin],
   themes: [
     [
@@ -62,7 +77,10 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    colorMode: {defaultMode: 'light', respectPrefersColorScheme: true},
+    // The Appearance panel (src/client/appearance.ts) is the one theme control; it drives data-theme for Infima.
+    // Docusaurus keeps reading the stored theme the pre-paint script writes; its own toggle renders nothing
+    // (src/theme/ColorModeToggle), so the Appearance button stays the one control.
+    colorMode: {defaultMode: 'light', disableSwitch: false, respectPrefersColorScheme: false},
     navbar: {
       title: 'WAYLOCK · GUIDES',
       logo: {alt: 'Waylock', src: 'img/favicon.svg'},
@@ -70,6 +88,7 @@ const config: Config = {
         {to: '/guide/release-status', label: 'Release status', position: 'left'},
         {to: '/guide/route-controls', label: 'Route controls', position: 'left'},
         {href: 'https://waylock.aoneahsan.com/', label: 'About Waylock ↗', position: 'right'},
+        {type: 'html', position: 'right', className: 'waylock-theme-item', value: themeButton},
       ],
     },
     footer: {
@@ -99,6 +118,8 @@ const config: Config = {
     ],
   },
   headTags: [
+    // Blocking, before Docusaurus's own colour script: every appearance axis lands before first paint.
+    {tagName: 'script', attributes: {src: '/appearance-prepaint.js'}},
     {
       tagName: 'meta',
       attributes: {name: 'yandex-verification', content: 'bfb02722189028cf'},

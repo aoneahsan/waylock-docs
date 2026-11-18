@@ -1,0 +1,90 @@
+/* One Appearance panel for the guides (D-102): the website's panel, axes and treatments, driving Infima's tokens.
+   Specificity matches custom.css (html …:not(#\#):not(#\#)) and this file loads after it, so the axes win. */
+html:root:not(#\#):not(#\#){--panel-muted:#e6ecdf;--sun-strong:#b65c25;--shadow:0 17px 55px #142d2033;--side:#ecf0e5;--control-radius:13px;--panel-radius:23px;--density:1;--display-face:Bricolage,Arial,sans-serif}
+html[data-theme='dark']:not(#\#):not(#\#){--panel-muted:#24483e;--sun-strong:#f5aa62;--shadow:0 17px 55px #0008;--side:#193a31}
+html[data-palette=tide]:not(#\#):not(#\#){--paper:oklch(.962 .012 225);--panel:oklch(.994 .004 225);--panel-muted:oklch(.925 .021 220);--ink:oklch(.22 .045 237);--muted:oklch(.45 .032 235);--forest:oklch(.22 .055 225);--forest-2:oklch(.31 .06 220);--line:oklch(.79 .03 220);--sun:oklch(.75 .125 200);--sun-strong:oklch(.65 .14 200);--on-sun:oklch(.16 .045 235);--white:oklch(.99 .005 225);--shadow:0 17px 55px rgb(17 41 67 / .2)}
+html[data-palette=tide][data-theme='dark']:not(#\#):not(#\#){--paper:oklch(.15 .027 230);--panel:oklch(.215 .033 230);--panel-muted:oklch(.29 .04 230);--ink:oklch(.96 .011 220);--muted:oklch(.75 .025 215);--forest:oklch(.11 .03 234);--forest-2:oklch(.27 .05 222);--line:oklch(.4 .04 220);--sun:oklch(.8 .105 200);--sun-strong:oklch(.86 .085 200);--on-sun:oklch(.14 .04 230);--white:oklch(.98 .005 220);--shadow:0 17px 55px rgb(0 0 0 / .42)}
+html[data-palette=orchid]:not(#\#):not(#\#){--paper:oklch(.968 .017 317);--panel:oklch(.994 .005 310);--panel-muted:oklch(.93 .024 316);--ink:oklch(.24 .055 305);--muted:oklch(.46 .035 309);--forest:oklch(.245 .075 304);--forest-2:oklch(.34 .07 306);--line:oklch(.82 .03 313);--sun:oklch(.77 .15 310);--sun-strong:oklch(.69 .16 310);--on-sun:oklch(.19 .06 304);--white:oklch(.995 .004 310);--shadow:0 17px 55px rgb(55 21 70 / .2)}
+html[data-palette=orchid][data-theme='dark']:not(#\#):not(#\#){--paper:oklch(.16 .028 307);--panel:oklch(.23 .036 307);--panel-muted:oklch(.30 .045 307);--ink:oklch(.96 .012 315);--muted:oklch(.75 .025 318);--forest:oklch(.125 .04 308);--forest-2:oklch(.29 .06 310);--line:oklch(.4 .04 310);--sun:oklch(.82 .12 310);--sun-strong:oklch(.88 .09 310);--on-sun:oklch(.16 .04 307);--white:oklch(.985 .005 310);--shadow:0 17px 55px rgb(0 0 0 / .42)}
+html[data-palette=tide]:not(#\#):not(#\#),html[data-palette=orchid]:not(#\#):not(#\#){--side:var(--panel-muted);--ifm-color-primary:var(--forest);--ifm-background-color:var(--paper);--ifm-font-color-base:var(--ink);--ifm-footer-background-color:var(--forest)}
+html[data-palette=tide][data-theme='dark']:not(#\#):not(#\#),html[data-palette=orchid][data-theme='dark']:not(#\#):not(#\#){--side:var(--panel);--ifm-color-primary:var(--sun);--ifm-background-color:var(--paper);--ifm-font-color-base:var(--ink);--ifm-footer-background-color:var(--forest)}
+html[data-palette=tide]:not(#\#):not(#\#),html[data-palette=orchid]:not(#\#):not(#\#){--ifm-color-primary-dark:color-mix(in oklch,var(--ifm-color-primary) 90%,black);--ifm-color-primary-darker:color-mix(in oklch,var(--ifm-color-primary) 84%,black);--ifm-color-primary-darkest:color-mix(in oklch,var(--ifm-color-primary) 72%,black);--ifm-color-primary-light:color-mix(in oklch,var(--ifm-color-primary) 88%,white);--ifm-color-primary-lighter:color-mix(in oklch,var(--ifm-color-primary) 80%,white);--ifm-color-primary-lightest:color-mix(in oklch,var(--ifm-color-primary) 66%,white)}
+/* Corner shape, density, text size, typeface and motion reach Infima through its own variables. */
+html[data-radius=none]:not(#\#):not(#\#){--control-radius:0px;--panel-radius:0px}
+html[data-radius=small]:not(#\#):not(#\#){--control-radius:7px;--panel-radius:12px}
+html[data-radius=medium]:not(#\#):not(#\#){--control-radius:13px;--panel-radius:23px}
+html[data-radius=large]:not(#\#):not(#\#){--control-radius:21px;--panel-radius:32px}
+html[data-radius=full]:not(#\#):not(#\#){--control-radius:999px;--panel-radius:36px}
+html:not(#\#):not(#\#){--ifm-global-radius:var(--control-radius);--ifm-button-border-radius:var(--control-radius);--ifm-card-border-radius:var(--panel-radius);--ifm-code-border-radius:var(--control-radius);--ifm-pagination-nav-border-radius:var(--control-radius);--ifm-alert-border-radius:var(--control-radius);--ifm-spacing-vertical:calc(1rem*var(--density));--ifm-spacing-horizontal:calc(1rem*var(--density));--ifm-paragraph-margin-bottom:calc(1.25rem*var(--density));--ifm-heading-font-family:var(--display-face)}
+html[data-density=compact]:not(#\#):not(#\#){--density:.88}
+html[data-density=spacious]:not(#\#):not(#\#){--density:1.12}
+html[data-type-scale=small]{font-size:14px}html[data-type-scale=medium]{font-size:16px}html[data-type-scale=large]{font-size:18px}
+html[data-font=dm-sans]:not(#\#):not(#\#){--display-face:DMSans,Arial,sans-serif}
+html[data-motion=reduced]{scroll-behavior:auto}
+html[data-motion=reduced] *,html[data-motion=reduced] *::before,html[data-motion=reduced] *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+@media(prefers-reduced-motion:reduce){html[data-motion=system] *,html[data-motion=system] *::before,html[data-motion=system] *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+html[data-surface-style=translucent] .navbar{background:color-mix(in oklch,var(--forest) 88%,transparent)!important;backdrop-filter:blur(10px)}
+html[data-surface-style=translucent] .guide-shell .cards>a,html[data-surface-style=translucent] .waylock-index-files a,html[data-surface-style=translucent] .theme-panel,html[data-surface-style=translucent] .pagination-nav__link,html[data-surface-style=translucent] .card{background:color-mix(in oklch,var(--panel) 88%,transparent);backdrop-filter:blur(10px)}
+/* The header button. */
+.waylock-theme-button{display:grid;place-items:center;width:44px;height:44px;flex:none;margin-left:.5rem;border:1px solid color-mix(in oklch,#fff 25%,transparent);border-radius:var(--control-radius);background:transparent;color:var(--sun);cursor:pointer}
+.waylock-theme-button svg{width:20px;height:20px}
+.waylock-theme-button .theme-icon-sun{display:none}
+html[data-theme='dark'] .waylock-theme-button .theme-icon-sun{display:block}
+html[data-theme='dark'] .waylock-theme-button .theme-icon-moon{display:none}
+/* The panel: the website's rules, raised to the specificity Infima carries in this build. */
+html:not(#\#):not(#\#) .theme-panel[hidden]{display:none}
+html:not(#\#):not(#\#) .theme-panel{position:fixed;z-index:100;top:74px;right:1rem;width:min(430px,calc(100vw - 2rem));max-height:calc(100dvh - 86px);display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--panel-radius,23px);background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
+html:not(#\#):not(#\#) .theme-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.1rem 1.1rem .5rem}
+html:not(#\#):not(#\#) .theme-panel-head h2{margin:.2rem 0 0;font:750 1.7rem/1.05 Bricolage,Arial,sans-serif;letter-spacing:-.05em}
+html:not(#\#):not(#\#) .theme-close{width:44px;height:44px;flex:none;border:1px solid var(--line);background:var(--panel-muted);color:var(--ink);font-size:1.4rem}
+html:not(#\#):not(#\#) .theme-intro{margin:0;padding:0 1.1rem .9rem;color:var(--muted);font-size:.78rem}
+html:not(#\#):not(#\#) .theme-options{overflow-y:auto;overscroll-behavior:contain;padding:0 1.1rem 1rem}
+html:not(#\#):not(#\#) .theme-axis{padding:.8rem 0;border-top:1px solid var(--line)}
+html:not(#\#):not(#\#) .theme-axis h3{margin:0 0 .55rem;font-size:.78rem;font-weight:800}
+html:not(#\#):not(#\#) .theme-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(86px,1fr));gap:.4rem}
+html:not(#\#):not(#\#) .theme-card{min-height:52px;display:flex;align-items:center;justify-content:center;gap:.35rem;flex-direction:column;padding:.4rem;border:1px solid var(--line);border-radius:var(--control-radius,13px);background:var(--panel);color:var(--ink);font-size:.68rem;font-weight:750;text-align:center}
+html:not(#\#):not(#\#) .theme-card[aria-checked=true]{border:2px solid var(--sun-strong);background:color-mix(in oklch,var(--sun) 15%,var(--panel))}
+html:not(#\#):not(#\#) .theme-card:hover{background:var(--panel-muted)}
+html:not(#\#):not(#\#) .theme-swatch{width:100%;height:20px;border-radius:5px;border:1px solid var(--line);background:linear-gradient(100deg,#e9eee2 0 33%,#f2a338 33% 67%,#183b30 67%)}
+html:not(#\#):not(#\#) .theme-swatch-tide{background:linear-gradient(100deg,#eaf1f6 0 33%,#58b8d0 33% 67%,#16344c 67%)}
+html:not(#\#):not(#\#) .theme-swatch-orchid{background:linear-gradient(100deg,#f3e9f4 0 33%,#d39be2 33% 67%,#44274f 67%)}
+html:not(#\#):not(#\#) .theme-radius-preview,html:not(#\#):not(#\#) .theme-density-preview,html:not(#\#):not(#\#) .theme-surface-preview{width:34px;height:20px;display:block;background:var(--sun);border:1px solid var(--line)}
+html:not(#\#):not(#\#) .theme-radius-none{border-radius:0}
+html:not(#\#):not(#\#) .theme-radius-small{border-radius:4px}
+html:not(#\#):not(#\#) .theme-radius-medium{border-radius:8px}
+html:not(#\#):not(#\#) .theme-radius-large{border-radius:14px}
+html:not(#\#):not(#\#) .theme-radius-full{border-radius:999px}
+html:not(#\#):not(#\#) .theme-density-compact{height:14px}
+html:not(#\#):not(#\#) .theme-density-spacious{height:25px}
+html:not(#\#):not(#\#) .theme-type-preview{font-size:1.1rem;line-height:1}
+html:not(#\#):not(#\#) .theme-type-small{font-size:.9rem}
+html:not(#\#):not(#\#) .theme-type-large{font-size:1.45rem}
+html:not(#\#):not(#\#) .theme-type-dm-sans{font-family:DMSans,Arial,sans-serif}
+html:not(#\#):not(#\#) .theme-type-bricolage{font-family:Bricolage,Arial,sans-serif}
+html:not(#\#):not(#\#) .theme-surface-translucent{opacity:.55}
+html:not(#\#):not(#\#) .theme-panel-foot{padding:.8rem 1.1rem;border-top:1px solid var(--line)}
+html:not(#\#):not(#\#) .theme-panel-foot button{width:100%;min-height:44px}
+html:not(#\#):not(#\#) .theme-panel a:focus-visible,html:not(#\#):not(#\#) .theme-panel button:focus-visible{outline:3px solid var(--sun-strong);outline-offset:2px}
+@media(max-width:639px){html:not(#\#):not(#\#) .theme-panel{inset:0 0 0 auto;width:min(100vw,430px);max-height:100dvh;border-radius:0}html:not(#\#):not(#\#) .theme-panel-head{padding-top:calc(1rem + env(safe-area-inset-top))}html:not(#\#):not(#\#) .theme-panel-foot{padding-bottom:calc(.8rem + env(safe-area-inset-bottom))}}
+html:not(#\#):not(#\#) .theme-kicker{margin:0;color:var(--muted);font-size:.68rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+html:not(#\#):not(#\#) .theme-icon{width:1rem;height:1rem;flex:none}
+html:not(#\#):not(#\#) .theme-icon-sun{display:none}
+html:not(#\#):not(#\#)[data-appearance=dark] .theme-icon-sun{display:block}
+html:not(#\#):not(#\#)[data-appearance=dark] .theme-icon-moon{display:none}
+html:not(#\#):not(#\#) .button-outline{border:1px solid var(--line);background:transparent;color:var(--ink)}
+html:not(#\#):not(#\#) .button-outline:hover{background:var(--panel-muted)}
+html:not(#\#):not(#\#) .theme-home{display:grid;gap:.6rem;justify-items:start}
+html:not(#\#):not(#\#) .theme-home[hidden]{display:none}
+html:not(#\#):not(#\#) .theme-home-body{margin:0;color:var(--muted)}
+/* Infima hides navbar items under 997px; the Appearance button stays in the header at every width. */
+@media(max-width:996px){html:not(#\#):not(#\#) .navbar__items--right>.navbar__item.waylock-theme-item:not(#\#):not(#\#){display:flex}html:not(#\#):not(#\#) .menu__list-item.waylock-theme-item:not(#\#):not(#\#){display:none}}
+html:not(#\#):not(#\#) .navbar__item.waylock-theme-item{display:flex;align-items:center;padding:0 .25rem}
+html:not(#\#):not(#\#) .theme-panel .button-outline{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:50px;padding:.7rem 1rem;border:1px solid var(--line);border-radius:var(--control-radius,13px);background:transparent;color:var(--ink);font-weight:800;cursor:pointer}
+html:not(#\#):not(#\#) .theme-panel .button-outline:hover{background:var(--panel-muted)}
+html:not(#\#):not(#\#) .theme-panel .button-outline:active{transform:translateY(1px)}
+html:not(#\#):not(#\#) .theme-panel button{font-family:inherit}
+
+/* Phones: Docusaurus floats the search box over the right edge; put it back in the row beside the button. */
+@media(max-width:996px){html:not(#\#):not(#\#) [class*=navbarSearchContainer_]{position:static;padding:0}}
+/* Docusaurus's navbar sits at z-index 200; the panel and its phone sheet go above it, close button included. */
+html:not(#\#):not(#\#) .theme-panel{z-index:var(--ifm-z-index-overlay,400)}

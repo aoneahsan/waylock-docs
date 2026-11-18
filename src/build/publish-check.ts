@@ -1,4 +1,4 @@
-import {readFileSync} from 'node:fs';
+import {readdirSync, readFileSync} from 'node:fs';
 import {join} from 'node:path';
 
 type Gate = {
@@ -53,6 +53,16 @@ export async function checkPublication({siteDir, outDir}: {siteDir: string; outD
     ['/guide/account-and-data', 'accountDataApprovedWords'],
   ] as const) {
     if (gate[key] !== dates[path]?.words) throw new Error(`${path}: rendered words differ from exact Story Gate 4 approval`);
+  }
+  // The legal bar says usage is counted; a build without the ids from the deploy shell counts nothing (2026-11-08 to 11-18).
+  const home = readFileSync(join(outDir, 'index.html'), 'utf8');
+  const scripts = readdirSync(join(outDir, 'assets/js')).filter(file => file.endsWith('.js'))
+    .map(file => readFileSync(join(outDir, 'assets/js', file), 'utf8')).join('\n');
+  const gaBuilt = /googletagmanager\.com\/gtag\/js\?id=G-[A-Z0-9]+/.test(home);
+  const clarityBuilt = /"?clarityId"?:"[a-z0-9]+"/.test(scripts);
+  const amplitudeBuilt = /"?amplitudeKey"?:"[a-f0-9]{32}"/.test(scripts);
+  if (!gaBuilt || !clarityBuilt || !amplitudeBuilt) {
+    throw new Error('Build GA_MEASUREMENT_ID, CLARITY_PROJECT_ID and AMPLITUDE_API_KEY from the FilesHub Waylock vault before deployment');
   }
   const feed = readFileSync(join(outDir, 'feed.xml'), 'utf8');
   const feedPage = readFileSync(join(outDir, 'feed.html'), 'utf8');
