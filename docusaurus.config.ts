@@ -1,6 +1,7 @@
 import {readFileSync} from 'node:fs';
 import type {Config} from '@docusaurus/types';
 import waylockBuildPlugin from './src/build/plugin';
+import {OTHER_PLATFORMS} from './src/data/platforms';
 
 const siteUrl = 'https://waylock-docs.aoneahsan.com';
 // Analytics ids come from the deploy shell (FilesHub Waylock vault); this repo is public, so none is committed.
@@ -87,13 +88,25 @@ const config: Config = {
       items: [
         {to: '/guide/release-status', label: 'Release status', position: 'left'},
         {to: '/guide/route-controls', label: 'Route controls', position: 'left'},
-        {href: 'https://waylock.aoneahsan.com/', label: 'About Waylock ↗', position: 'right'},
+        {
+          type: 'dropdown',
+          label: 'Get Waylock',
+          position: 'right',
+          items: [
+            ...OTHER_PLATFORMS.map(platform => ({label: platform.name, href: platform.href})),
+            {label: 'All apps', to: '/apps'},
+          ],
+        },
         {type: 'html', position: 'right', className: 'waylock-theme-item', value: themeButton},
       ],
     },
     footer: {
       style: 'dark',
       links: [
+        {title: 'Get Waylock', items: [
+          ...OTHER_PLATFORMS.map(platform => ({label: platform.name, href: platform.href})),
+          {label: 'All apps', to: '/apps'},
+        ]},
         {title: 'Guides', items: [
           {label: 'Overview', to: '/'},
           {label: 'Release status', to: '/guide/release-status'},

@@ -30,6 +30,7 @@ function listRoutes(outDir: string): Route[] {
     {path: '/guide/account-and-data', file: 'guide/account-and-data.html'},
     {path: '/sitemap', file: 'sitemap.html'},
     {path: '/feed', file: 'feed.html'},
+    {path: '/apps', file: 'apps.html'},
   ];
   routes.push(...folderRoutes(outDir, 'guide/tags'));
   routes.push({path: '/guide/tags', file: 'guide/tags.html'});

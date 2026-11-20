@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import {GuideByline} from '../components/ReleaseFacts';
+import {PRIMARY_PLATFORM} from '@site/src/data/platforms';
 
 const guideCards = [
   {
@@ -49,6 +50,7 @@ export default function Home(): React.JSX.Element {
                 <h1><Translate id="home.heading">Know the route before you go</Translate></h1>
                 <GuideByline path="/"/>
                 <p className="lead"><Translate id="home.intro">You may need one delivery stop to stay in place, or a clear choice after a wrong turn. These guides explain Waylock's planned route controls and where its Android release stands.</Translate></p>
+                <p className="lead"><Translate id="home.getWaylock">Get Waylock:</Translate> <a href={PRIMARY_PLATFORM.href}>{PRIMARY_PLATFORM.name}</a> · <Link to="/apps"><Translate id="home.allApps">All apps</Translate></Link></p>
                 <a className="text-link" href="#availability"><Translate id="home.checkStatus">Check release status</Translate><span aria-hidden="true">↗</span></a>
               </div>
               <div className="route-drawing" aria-hidden="true"><svg viewBox="0 0 380 300"><path className="grid" d="M30 0V300M130 0V300M270 0V300M0 50H380M0 180H380M0 250H380"/><path className="path" d="M35 248 C93 221 75 65 145 90 S225 228 345 38"/><circle cx="35" cy="248" r="12"/><circle cx="145" cy="90" r="12"/><circle cx="345" cy="38" r="12"/></svg><span className="held">03 · <Translate id="home.held">HELD</Translate></span></div>

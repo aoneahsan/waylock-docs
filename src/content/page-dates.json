@@ -1,7 +1,7 @@
 {
   "/": {
-    "updated": "2026-11-09",
-    "words": "8acd8b93cb5c0f70"
+    "updated": "2026-11-20",
+    "words": "ed63dc98f545efa5"
   },
   "/guide/release-status": {
     "updated": "2026-11-09",
@@ -166,5 +166,9 @@
   "/guide/compare/zeo": {
     "updated": "2026-11-09",
     "words": "160d52407392cb62"
+  },
+  "/apps": {
+    "updated": "2026-11-20",
+    "words": "ace536488fb37b93"
   }
 }
