@@ -61,7 +61,11 @@ const config: Config = {
   ],
   customFields: {analytics},
   clientModules: ['./src/client/legal-notice.ts', './src/client/analytics.ts', './src/client/appearance.ts'],
-  plugins: [waylockBuildPlugin],
+  plugins: [
+    waylockBuildPlugin,
+    // The Waylock API, its OpenAPI document and the MCP server name `/docs/developers` as the docs address.
+    ['@docusaurus/plugin-client-redirects', {redirects: [{from: '/docs/developers', to: '/guide/developers'}]}],
+  ],
   themes: [
     [
       '@easyops-cn/docusaurus-search-local',
@@ -88,6 +92,7 @@ const config: Config = {
       items: [
         {to: '/guide/release-status', label: 'Release status', position: 'left'},
         {to: '/guide/route-controls', label: 'Route controls', position: 'left'},
+        {to: '/guide/developers', label: 'Developers', position: 'left'},
         {
           type: 'dropdown',
           label: 'Get Waylock',
@@ -111,6 +116,7 @@ const config: Config = {
           {label: 'Overview', to: '/'},
           {label: 'Release status', to: '/guide/release-status'},
           {label: 'Route controls', to: '/guide/route-controls'},
+          {label: 'Developers', to: '/guide/developers'},
           {label: 'Sitemap', to: '/sitemap'},
           {label: 'Updates', to: '/feed'},
         ]},

@@ -36,6 +36,8 @@ function listRoutes(outDir: string): Route[] {
   routes.push({path: '/guide/tags', file: 'guide/tags.html'});
   routes.push({path: '/guide/white-label', file: 'guide/white-label.html'});
   routes.push(...folderRoutes(outDir, 'guide/white-label'));
+  routes.push({path: '/guide/developers', file: 'guide/developers.html'});
+  routes.push(...folderRoutes(outDir, 'guide/developers'));
   routes.push({path: '/guide/compare', file: 'guide/compare.html'});
   routes.push(...folderRoutes(outDir, 'guide/compare'));
   return routes;
@@ -95,18 +97,29 @@ function writeNotFound(outDir: string): void {
   writeFileSync(file, notFound);
 }
 
+type FeedItem = {date: string; path: string; category: string; title: string; body: string};
+
+function validDay(day: string | null): boolean {
+  if (day === null) return true;
+  const at = new Date(`${day}T00:00:00Z`);
+  return /^\d{4}-\d{2}-\d{2}$/.test(day) && !Number.isNaN(at.getTime()) && at.toISOString().slice(0, 10) === day && at <= new Date();
+}
+
+function feedItemXml(item: FeedItem): string {
+  const link = `${host}${item.path}`;
+  return `<item><title>${escapeXml(item.title)}</title><link>${link}</link><guid isPermaLink="true">${link}</guid><pubDate>${new Date(`${item.date}T00:00:00Z`).toUTCString()}</pubDate><category>${escapeXml(item.category)}</category><description>${escapeXml(item.body)}</description></item>`;
+}
+
+/** Writes feed.xml newest first: the developer launch, then the first release-status update once it has a date. */
 function writeFeed({siteDir, outDir}: SitePaths): void {
   const firstDate = readJson<{firstFeedPublicationDate: string | null}>(join(siteDir, 'src/content/publication.json')).firstFeedPublicationDate;
-  const firstFeedItem = readJson<{category: string; title: string; body: string}>(join(siteDir, 'src/content/feed-item-en-GB.json'));
-  if (firstDate !== null && (!/^\d{4}-\d{2}-\d{2}$/.test(firstDate) ||
-      Number.isNaN(Date.parse(`${firstDate}T00:00:00Z`)) ||
-      new Date(`${firstDate}T00:00:00Z`).toISOString().slice(0, 10) !== firstDate ||
-      new Date(`${firstDate}T00:00:00Z`) > new Date())) {
-    throw new Error('Invalid or future firstFeedPublicationDate');
-  }
-  const published = firstDate ? new Date(`${firstDate}T00:00:00Z`).toUTCString() : null;
-  const firstItem = published ? `<item><title>${escapeXml(firstFeedItem.title)}</title><link>${host}/guide/release-status</link><guid isPermaLink="true">${host}/guide/release-status</guid><pubDate>${published}</pubDate><category>${escapeXml(firstFeedItem.category)}</category><description>${escapeXml(firstFeedItem.body)}</description></item>` : '';
-  const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waylock guide updates</title><link>${host}/feed</link><description>Dated changes to Waylock's public guides and release status.</description><language>en-GB</language>${published ? `<lastBuildDate>${published}</lastBuildDate>` : ''}<atom:link href="${host}/feed.xml" rel="self" type="application/rss+xml"/>${firstItem}</channel></rss>\n`;
+  const first = readJson<Omit<FeedItem, 'date' | 'path'>>(join(siteDir, 'src/content/feed-item-en-GB.json'));
+  const developers = readJson<FeedItem>(join(siteDir, 'src/content/feed-item-developers-en-GB.json'));
+  if (!validDay(firstDate) || !validDay(developers.date)) throw new Error('Invalid or future feed date');
+  const items: FeedItem[] = [developers, ...(firstDate ? [{...first, date: firstDate, path: '/guide/release-status'}] : [])]
+    .sort((a, b) => b.date.localeCompare(a.date));
+  const newest = new Date(`${items[0].date}T00:00:00Z`).toUTCString();
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waylock guide updates</title><link>${host}/feed</link><description>Dated changes to Waylock's public guides and release status.</description><language>en-GB</language><lastBuildDate>${newest}</lastBuildDate><atom:link href="${host}/feed.xml" rel="self" type="application/rss+xml"/>${items.map(feedItemXml).join('')}</channel></rss>\n`;
   writeFileSync(join(outDir, 'feed.xml'), rss);
 }
 

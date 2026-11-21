@@ -1,5 +1,6 @@
 import {translate} from '@docusaurus/Translate';
 import firstFeedItem from './feed-item-en-GB.json';
+import developersFeedItem from './feed-item-developers-en-GB.json';
 
 // Approved reader words for the sitemap, feed and topic pages. src/content/publication.json holds their fingerprints.
 export const discovery = {
@@ -14,13 +15,14 @@ export const discovery = {
   feed: {
     title: translate({id: 'discovery.feed.title', message: 'Guide updates'}),
     description: translate({id: 'discovery.feed.description', message: "Dated changes to Waylock's public guides and release status."}),
-    intro: translate({id: 'discovery.feed.intro', message: 'No guide update has a date yet. When a guide changes, this page will link the dated change to its guide so you can inspect what was verified at that point.'}),
-    introDated: translate({id: 'discovery.feed.introDated', message: 'A dated guide update appears below. Open its source guide for the current release position; the item records the change at its publication date, and the guide may change later.'}),
+    introDated: translate({id: 'discovery.feed.introDated', message: 'Dated guide updates appear below, newest first. Open an update\'s guide for where things stand now; each update records the change on its date, and the guide may change later.'}),
     rss: translate({id: 'discovery.feed.rss', message: 'Subscribe to RSS'}),
-    empty: translate({id: 'discovery.feed.empty', message: 'No public updates yet.'}),
     category: translate({id: 'discovery.feed.category', message: firstFeedItem.category}),
     firstTitle: translate({id: 'discovery.feed.firstTitle', message: firstFeedItem.title}),
     firstBody: translate({id: 'discovery.feed.firstBody', message: firstFeedItem.body}),
+    developersCategory: translate({id: 'discovery.feed.developersCategory', message: developersFeedItem.category}),
+    developersTitle: translate({id: 'discovery.feed.developersTitle', message: developersFeedItem.title}),
+    developersBody: translate({id: 'discovery.feed.developersBody', message: developersFeedItem.body}),
   },
   topics: {
     title: translate({id: 'discovery.topics.title', message: 'Browse guide topics'}),
@@ -108,6 +110,7 @@ export const sitemapPages = [
   {href: '/guide/route-controls', title: translate({id: 'discovery.sitemap.routes.title', message: 'Route controls'}), description: translate({id: 'discovery.sitemap.routes.description', message: 'Read about the planned stop lock, distance range and locked route.'}), tags: ['routes', 'stops'], icon: '◇'},
   {href: '/guide/account-and-data', title: translate({id: 'discovery.sitemap.account.title', message: 'Account and data'}), description: translate({id: 'discovery.sitemap.account.description', message: 'Find the legal pages, support contact and signed-in deletion path.'}), tags: ['privacy', 'account'], icon: '□'},
   {href: '/guide/compare', title: translate({id: 'discovery.sitemap.compare.title', message: 'Moving from another app'}), description: translate({id: 'discovery.sitemap.compare.description', message: 'How twenty other route and road trip apps differ from Waylock, and where to start here.'}), tags: ['routes', 'compare'], icon: '↔'},
+  {href: '/guide/developers', title: translate({id: 'discovery.sitemap.developers.title', message: 'Developers'}), description: translate({id: 'discovery.sitemap.developers.description', message: 'Access keys, the API, assistants such as Claude, webhooks and two-step sign-in for your own records.'}), tags: ['api', 'mcp', 'webhooks', 'two-step'], icon: '⌗'},
   {href: '/guide/white-label', title: translate({id: 'discovery.sitemap.whiteLabel.title', message: 'White-label & licensing'}), description: translate({id: 'discovery.sitemap.whiteLabel.description', message: 'Run Waylock under your own brand: what is delivered, setup, updates and licence checks.'}), tags: ['licence', 'white-label'], icon: '▣'},
   {href: '/feed', title: translate({id: 'discovery.sitemap.feed.title', message: 'Guide updates'}), description: translate({id: 'discovery.sitemap.feed.description', message: 'Read dated guide changes once a public update exists.'}), tags: ['updates', 'feed'], icon: '↗'},
   {href: '/guide/tags', title: translate({id: 'discovery.sitemap.topics.title', message: 'All topics'}), description: translate({id: 'discovery.sitemap.topics.description', message: 'Browse the published guides by topic.'}), tags: ['topics'], icon: '▦'},

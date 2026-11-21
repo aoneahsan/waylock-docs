@@ -12,16 +12,16 @@
     "words": "cb0e39d81cce7afb"
   },
   "/guide/account-and-data": {
-    "updated": "2026-11-07",
-    "words": "d6cd439e87737a22"
+    "updated": "2026-11-21",
+    "words": "562fa1da25c9ad0f"
   },
   "/sitemap": {
-    "updated": "2026-11-13",
-    "words": "669b480c80b1d7ed"
+    "updated": "2026-11-21",
+    "words": "177168fa40b0f2b0"
   },
   "/feed": {
-    "updated": "2026-11-09",
-    "words": "49679b714e63f81f"
+    "updated": "2026-11-21",
+    "words": "ea81492a21b03bf7"
   },
   "/guide/tags/account": {
     "updated": "2026-11-07",
@@ -61,7 +61,7 @@
   },
   "/guide/white-label": {
     "updated": "2026-11-14",
-    "words": "b2ad0224643981f3"
+    "words": "7c033433f34bb4a2"
   },
   "/guide/white-label/delivery": {
     "updated": "2026-11-13",
@@ -82,6 +82,34 @@
   "/guide/white-label/verify": {
     "updated": "2026-11-13",
     "words": "62eb5110c61338ef"
+  },
+  "/guide/developers": {
+    "updated": "2026-11-21",
+    "words": "0382b0bf30707892"
+  },
+  "/guide/developers/access-keys": {
+    "updated": "2026-11-21",
+    "words": "305aadfa6402542c"
+  },
+  "/guide/developers/api": {
+    "updated": "2026-11-21",
+    "words": "231a203fe408311c"
+  },
+  "/guide/developers/assistants": {
+    "updated": "2026-11-21",
+    "words": "5ef9deec01d489d6"
+  },
+  "/guide/developers/changelog": {
+    "updated": "2026-11-21",
+    "words": "b77ba323a34e25b9"
+  },
+  "/guide/developers/two-step-sign-in": {
+    "updated": "2026-11-21",
+    "words": "e6284bb3ef548b09"
+  },
+  "/guide/developers/webhooks": {
+    "updated": "2026-11-21",
+    "words": "4f033cf71d627931"
   },
   "/guide/compare": {
     "updated": "2026-11-13",

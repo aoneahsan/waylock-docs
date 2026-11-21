@@ -24,6 +24,10 @@ The [account-deletion page](https://waylock.aoneahsan.com/delete-account) is up,
 
 In the billing portal Polar hosts. Polar emails you the link. Billing ends when your account is removed. To stop it sooner, cancel it there.
 
+## Which other apps can reach my account?
+
+Only the ones you connect on [Other apps](https://waylock.aoneahsan.com/account/apps): access keys, assistants such as Claude, and webhook addresses. Each reaches your own records and only the parts you tick, and none can read your sign-in, payments or anyone else's plans. [Developers](./developers/index.md) explains each one, and [two-step sign-in](./developers/two-step-sign-in.md) adds a code from your phone after Google.
+
 ## What if I need help?
 
 For an ordinary product or legal question, email [aoneahsan@gmail.com](mailto:aoneahsan@gmail.com). Account deletion uses the signed-in page, not email. If the page cannot confirm an outcome, check the account status before you submit again. If that check fails too, write to [aoneahsan@gmail.com](mailto:aoneahsan@gmail.com), and the team can tell you whether a deletion was scheduled; email cannot delete an account.

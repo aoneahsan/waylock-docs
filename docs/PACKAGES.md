@@ -1,12 +1,13 @@
 # Packages — waylock-docs
 
-**Last Updated:** 2026-11-16. Kept out of the published guide by the docs plugin's `exclude`.
+**Last Updated:** 2026-11-21. Kept out of the published guide by the docs plugin's `exclude`.
 **Manifest unit:** one, the repository root `package.json`. **Package manager:** Yarn 4.18.1. Only `yarn.lock` may exist.
 **Node:** 26.13.1 LTS (`.nvmrc`, `engines.node >=26.13.1`, since 2026-11-16); `.yarnrc.yml` keeps `npmMinimalAgeGate: 0`.
 
 | Package | Version | Purpose |
 |---|---|---|
 | `@docusaurus/core`, `faster`, `preset-classic`, `theme-classic`, `theme-common` | 3.10.2 | The site, its theme and the faster bundler |
+| `@docusaurus/plugin-client-redirects` | 3.10.2 | Sends `/docs/developers`, the address the Waylock API names, to `/guide/developers` |
 | `@easyops-cn/docusaurus-search-local` | 0.55.3 | Search with no outside service |
 | `@mdx-js/react`, `clsx`, `prism-react-renderer` | 3.1.1 / ^2.1.1 / ^2.4.1 | Docusaurus peers |
 | `react`, `react-dom` | ^19.3.1 | Rendering |
